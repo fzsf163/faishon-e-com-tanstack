@@ -17,12 +17,12 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  pnpm install
+  npm install
 ```
 
 Start the server
 
 ```bash
-  pnpm run dev
+  npm run dev
 ```
 
