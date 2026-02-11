@@ -5,7 +5,7 @@ Admin Dashboard UI crafted with Shadcn and Vite TanStack Router
 Clone the project
 
 ```bash
-  git clone https://github.com/fzsf163/e-com-VST.git
+  git clone https://github.com/fzsf163/faishon-e-com-tanstack.git
 ```
 
 Go to the project directory
