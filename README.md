@@ -11,7 +11,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd shadcn-admin
+  cd faishon-e-com-tanstack
 ```
 
 Install dependencies
