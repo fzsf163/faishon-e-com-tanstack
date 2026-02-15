@@ -8,12 +8,15 @@ import { ThemeSwitch } from '@/components/theme-switch'
 import { StoreTopBarData } from '../data/navbarData'
 import SignInModal from './modalSIngIn'
 import SearchWithIcon from './searchWithIcon'
+import logodark from '/images/nexf-blue-logo.svg?url'
+import logolight from '/images/nexf-white-logo.svg?url'
 
 export function StoreTopNavbar() {
   return (
     <div className='w-full  bg-slate-900 text-primary-foreground dark:text-foreground dark:bg-secondary'>
       <div className='flex items-center justify-center gap-10 py-5 '>
-        <p>LOGO</p>
+        <img className='size-16 h-fit  dark:hidden' src={logodark}></img>
+        <img className='size-16 h-fit hidden dark:block' src={logolight}></img>
         <SearchWithIcon></SearchWithIcon>
         <NavMap />
         <ThemeSwitch />
