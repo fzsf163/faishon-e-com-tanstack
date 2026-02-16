@@ -48,11 +48,11 @@ export function ProductCarousel() {
         <CarouselContent>
           {Ready_For_Order.map((R) => (
             <CarouselItem key={R.name} className='sm:basis-1/6'>
-              <div>
-                <Card className='border-none h-fit'>
-                  <CardContent className='flex h-full w-full sm:h-[14rem] items-center justify-center'>
+              <div className='p-2'>
+                <Card className='border-none h-fit space-y-4'>
+                  <CardContent className='flex h-full w-full sm:h-[14rem] items-center justify-center p-0'>
                     <img
-                      className='h-full w-full sm:rounded-xl'
+                      className='h-full w-full sm:rounded-lg'
                       src={R.href}
                       alt={R.name}
                     ></img>

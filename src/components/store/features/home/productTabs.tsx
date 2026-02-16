@@ -17,7 +17,7 @@ export default function TabsGroupProduct() {
         <div className='mt-5 sm:mt-10 grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 p-2 sm:p-0 sm:gap-10'>
           {Ready_For_Order.map((R) => (
             <div key={R.name}>
-              <Card>
+              <Card className='border-none'>
                 <CardContent className='flex h-[8rem] sm:h-[14rem] items-center justify-center sm:p-6'>
                   <img
                     className='shadow rounded h-full w-full'
@@ -49,7 +49,7 @@ export default function TabsGroupProduct() {
         <div className='mt-5 sm:mt-10 grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 p-2 sm:p-0 sm:gap-10'>
           {Carousel_Images.map((R) => (
             <div key={R.name}>
-              <Card>
+              <Card className='border-none'>
                 <CardContent className='flex h-[8rem] sm:h-[14rem] items-center justify-center sm:p-6'>
                   <img
                     className='shadow rounded h-full w-full'

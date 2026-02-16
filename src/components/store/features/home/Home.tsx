@@ -54,10 +54,10 @@ export function Home() {
         <div className=' mt-5 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 max-w-screen-2xl mx-auto p-2 sm:p-0'>
           {Ready_For_Order.map((R) => (
             <div key={R.name}>
-              <Card>
+              <Card className='border-none'>
                 <CardContent className='flex items-center justify-center flex-col gap-2 p-3 sm:p-2'>
                   <img
-                    className='aspect-[4/3] bg-slate-400 rounded-md w-full'
+                    className='aspect-[4/3] bg-slate-400 rounded-lg w-full'
                     src={R.href}
                     alt={R.name}
                   ></img>
