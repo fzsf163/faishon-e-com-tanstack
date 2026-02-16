@@ -1,5 +1,6 @@
-import { ChevronRight } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from '@tanstack/react-router'
+import { ChevronRight } from 'lucide-react'
 import categories, { Category } from '../data/navForItems'
 
 const CategoryItem = ({
@@ -24,10 +25,18 @@ const CategoryItem = ({
           level === 0
             ? 'text-gray-700 hover:bg-primary hover:text-primary-foreground dark:hover:bg-primary dark:hover:text-foreground rounded-lg'
             : 'hover:bg-secondary rounded'
-        } transition-colors cursor-pointer`}
+        } transition-colors`}
       >
         <span className={level === 0 ? 'font-medium text-nowrap ' : ''}>
-          {category.name}
+          <Link
+            to='/products/$productCtg/$productName'
+            params={{
+              productName: category.name,
+              productCtg: level.toString(),
+            }}
+          >
+            {category.name}
+          </Link>
         </span>
         {hasChildren && (
           <ChevronRight

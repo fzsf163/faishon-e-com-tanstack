@@ -20,6 +20,7 @@ import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as UserAuthenticatedRouteRouteImport } from './routes/user/_authenticated/route'
 import { Route as UserAuthenticatedIndexRouteImport } from './routes/user/_authenticated/index'
+import { Route as StoreProductsProductCtgProductNameRouteImport } from './routes/_store/products.$productCtg.$productName'
 
 const errors503LazyRouteImport = createFileRoute('/(errors)/503')()
 const errors500LazyRouteImport = createFileRoute('/(errors)/500')()
@@ -316,6 +317,12 @@ const UserAuthenticatedSettingsAccountLazyRoute =
       (d) => d.Route,
     ),
   )
+const StoreProductsProductCtgProductNameRoute =
+  StoreProductsProductCtgProductNameRouteImport.update({
+    id: '/products/$productCtg/$productName',
+    path: '/products/$productCtg/$productName',
+    getParentRoute: () => StoreRouteRoute,
+  } as any)
 const UserAuthenticatedProductsSectionIndexLazyRoute =
   UserAuthenticatedProductsSectionIndexLazyRouteImport.update({
     id: '/products/$section/',
@@ -344,6 +351,7 @@ export interface FileRoutesByFullPath {
   '/503': typeof errors503LazyRoute
   '/user/settings': typeof UserAuthenticatedSettingsRouteLazyRouteWithChildren
   '/user/': typeof UserAuthenticatedIndexRoute
+  '/products/$productCtg/$productName': typeof StoreProductsProductCtgProductNameRoute
   '/user/settings/account': typeof UserAuthenticatedSettingsAccountLazyRoute
   '/user/settings/appearance': typeof UserAuthenticatedSettingsAppearanceLazyRoute
   '/user/settings/display': typeof UserAuthenticatedSettingsDisplayLazyRoute
@@ -374,6 +382,7 @@ export interface FileRoutesByTo {
   '/500': typeof errors500LazyRoute
   '/503': typeof errors503LazyRoute
   '/': typeof StoreIndexRoute
+  '/products/$productCtg/$productName': typeof StoreProductsProductCtgProductNameRoute
   '/user/settings/account': typeof UserAuthenticatedSettingsAccountLazyRoute
   '/user/settings/appearance': typeof UserAuthenticatedSettingsAppearanceLazyRoute
   '/user/settings/display': typeof UserAuthenticatedSettingsDisplayLazyRoute
@@ -409,6 +418,7 @@ export interface FileRoutesById {
   '/_store/': typeof StoreIndexRoute
   '/user/_authenticated/settings': typeof UserAuthenticatedSettingsRouteLazyRouteWithChildren
   '/user/_authenticated/': typeof UserAuthenticatedIndexRoute
+  '/_store/products/$productCtg/$productName': typeof StoreProductsProductCtgProductNameRoute
   '/user/_authenticated/settings/account': typeof UserAuthenticatedSettingsAccountLazyRoute
   '/user/_authenticated/settings/appearance': typeof UserAuthenticatedSettingsAppearanceLazyRoute
   '/user/_authenticated/settings/display': typeof UserAuthenticatedSettingsDisplayLazyRoute
@@ -443,6 +453,7 @@ export interface FileRouteTypes {
     | '/503'
     | '/user/settings'
     | '/user/'
+    | '/products/$productCtg/$productName'
     | '/user/settings/account'
     | '/user/settings/appearance'
     | '/user/settings/display'
@@ -473,6 +484,7 @@ export interface FileRouteTypes {
     | '/500'
     | '/503'
     | '/'
+    | '/products/$productCtg/$productName'
     | '/user/settings/account'
     | '/user/settings/appearance'
     | '/user/settings/display'
@@ -507,6 +519,7 @@ export interface FileRouteTypes {
     | '/_store/'
     | '/user/_authenticated/settings'
     | '/user/_authenticated/'
+    | '/_store/products/$productCtg/$productName'
     | '/user/_authenticated/settings/account'
     | '/user/_authenticated/settings/appearance'
     | '/user/_authenticated/settings/display'
@@ -757,6 +770,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserAuthenticatedSettingsAccountLazyRouteImport
       parentRoute: typeof UserAuthenticatedSettingsRouteLazyRoute
     }
+    '/_store/products/$productCtg/$productName': {
+      id: '/_store/products/$productCtg/$productName'
+      path: '/products/$productCtg/$productName'
+      fullPath: '/products/$productCtg/$productName'
+      preLoaderRoute: typeof StoreProductsProductCtgProductNameRouteImport
+      parentRoute: typeof StoreRouteRoute
+    }
     '/user/_authenticated/products/$section/': {
       id: '/user/_authenticated/products/$section/'
       path: '/products/$section'
@@ -771,12 +791,15 @@ interface StoreRouteRouteChildren {
   StoreAboutRoute: typeof StoreAboutRoute
   StoreOffersRoute: typeof StoreOffersRoute
   StoreIndexRoute: typeof StoreIndexRoute
+  StoreProductsProductCtgProductNameRoute: typeof StoreProductsProductCtgProductNameRoute
 }
 
 const StoreRouteRouteChildren: StoreRouteRouteChildren = {
   StoreAboutRoute: StoreAboutRoute,
   StoreOffersRoute: StoreOffersRoute,
   StoreIndexRoute: StoreIndexRoute,
+  StoreProductsProductCtgProductNameRoute:
+    StoreProductsProductCtgProductNameRoute,
 }
 
 const StoreRouteRouteWithChildren = StoreRouteRoute._addFileChildren(

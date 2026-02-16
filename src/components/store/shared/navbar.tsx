@@ -15,8 +15,13 @@ export function StoreTopNavbar() {
   return (
     <div className='w-full  bg-slate-900 text-primary-foreground dark:text-foreground dark:bg-secondary'>
       <div className='flex items-center justify-center gap-10 py-5 '>
-        <img className='size-16 h-fit  dark:hidden' src={logodark}></img>
-        <img className='size-16 h-fit hidden dark:block' src={logolight}></img>
+        <Link to='/'>
+          <img className='size-16 h-fit  dark:hidden' src={logodark}></img>
+          <img
+            className='size-16 h-fit hidden dark:block'
+            src={logolight}
+          ></img>
+        </Link>
         <SearchWithIcon></SearchWithIcon>
         <NavMap />
         <ThemeSwitch />
