@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 import { Star } from 'lucide-react'
+import { Carousel_Images, SideBanner_Images } from '@/assets/imageObj'
+import { useIsMobile } from '@/hooks/use-mobile'
 import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
@@ -28,9 +30,11 @@ export function CarouselMain() {
       setCurrent(api.selectedScrollSnap() + 1)
     })
   }, [api])
-
+  const ismobile = useIsMobile()
+  const mblCarosuel_Images = Carousel_Images.concat(SideBanner_Images)
+  const carousel_images = ismobile ? mblCarosuel_Images : Carousel_Images
   return (
-    <div className='w-full max-w-[70%] lg:max-w-screen-lg'>
+    <div className='w-full max-w-screen-xl'>
       <Carousel
         opts={{
           align: 'start',
@@ -39,17 +43,23 @@ export function CarouselMain() {
         setApi={setApi}
         plugins={[
           Autoplay({
-            delay: 2000,
+            delay: 4000,
+            stopOnMouseEnter: true,
+            stopOnInteraction: true,
           }),
         ]}
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <div className='p-1'>
-                <Card>
-                  <CardContent className='flex h-[30rem] items-center justify-center p-6 '>
-                    <span className='text-4xl font-semibold'>{index + 1}</span>
+          {carousel_images.map((C) => (
+            <CarouselItem key={C.name}>
+              <div>
+                <Card className='border-none h-fit'>
+                  <CardContent className='sm:h-[40rem] w-full p-0'>
+                    <img
+                      className='h-full w-full sm:rounded-xl'
+                      src={C.href}
+                      alt={C.name}
+                    ></img>
                   </CardContent>
                 </Card>
               </div>

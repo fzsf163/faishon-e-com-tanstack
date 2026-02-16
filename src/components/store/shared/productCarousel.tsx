@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
+import { Ready_For_Order } from '@/assets/imageObj'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import {
@@ -7,29 +8,26 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
+  CarouselPrevious, // type CarouselApi,
 } from '@/components/ui/carousel'
 
 export function ProductCarousel() {
-  const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
-  const [count, setCount] = useState(0)
-  // eslint-disable-next-line no-console
-  console.log(current, count)
+  // const [api, setApi] = useState<CarouselApi>()
+  // const [current, setCurrent] = useState(0)
+  // const [count, setCount] = useState(0)
 
-  useEffect(() => {
-    if (!api) {
-      return
-    }
+  // useEffect(() => {
+  //   if (!api) {
+  //     return
+  //   }
 
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
+  //   setCount(api.scrollSnapList().length)
+  //   setCurrent(api.selectedScrollSnap() + 1)
 
-    api.on('select', () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
+  //   api.on('select', () => {
+  //     setCurrent(api.selectedScrollSnap() + 1)
+  //   })
+  // }, [api])
 
   return (
     <div className='w-full max-w-screen-2xl'>
@@ -38,20 +36,26 @@ export function ProductCarousel() {
           align: 'start',
           loop: true,
         }}
-        setApi={setApi}
+        // setApi={setApi}
         plugins={[
           Autoplay({
-            delay: 2000,
+            delay: 4000,
+            stopOnMouseEnter: true,
+            stopOnInteraction: true,
           }),
         ]}
       >
         <CarouselContent>
-          {Array.from({ length: 13 }).map((_, index) => (
-            <CarouselItem key={index} className='basis-1/6'>
-              <div className='p-1'>
-                <Card>
-                  <CardContent className='flex h-[14rem] items-center justify-center p-6 '>
-                    <span className='text-4xl font-semibold'>{index + 1}</span>
+          {Ready_For_Order.map((R) => (
+            <CarouselItem key={R.name} className='sm:basis-1/6'>
+              <div>
+                <Card className='border-none h-fit'>
+                  <CardContent className='flex h-full w-full sm:h-[14rem] items-center justify-center'>
+                    <img
+                      className='h-full w-full sm:rounded-xl'
+                      src={R.href}
+                      alt={R.name}
+                    ></img>
                   </CardContent>
                   <CardFooter className='flex items-center justify-center gap-2'>
                     <Button className='dark:text-foreground'>Buy Now</Button>
@@ -62,12 +66,9 @@ export function ProductCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className='absolute left-10 top-1/3' />
+        <CarouselNext className='absolute right-10 top-1/3' />
       </Carousel>
-      {/* <div className='py-2 text-center text-sm text-muted-foreground'>
-        Slide {current} of {count}
-      </div> */}
     </div>
   )
 }

@@ -20,6 +20,7 @@ import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as UserAuthenticatedRouteRouteImport } from './routes/user/_authenticated/route'
 import { Route as UserAuthenticatedIndexRouteImport } from './routes/user/_authenticated/index'
+import { Route as StoreCategoryNameRouteImport } from './routes/_store/category.$name'
 import { Route as StoreProductsProductCtgProductNameRouteImport } from './routes/_store/products.$productCtg.$productName'
 
 const errors503LazyRouteImport = createFileRoute('/(errors)/503')()
@@ -189,6 +190,11 @@ const UserAuthenticatedSettingsRouteLazyRoute =
       (d) => d.Route,
     ),
   )
+const StoreCategoryNameRoute = StoreCategoryNameRouteImport.update({
+  id: '/category/$name',
+  path: '/category/$name',
+  getParentRoute: () => StoreRouteRoute,
+} as any)
 const UserAuthenticatedUsersIndexLazyRoute =
   UserAuthenticatedUsersIndexLazyRouteImport.update({
     id: '/users/',
@@ -349,6 +355,7 @@ export interface FileRoutesByFullPath {
   '/404': typeof errors404LazyRoute
   '/500': typeof errors500LazyRoute
   '/503': typeof errors503LazyRoute
+  '/category/$name': typeof StoreCategoryNameRoute
   '/user/settings': typeof UserAuthenticatedSettingsRouteLazyRouteWithChildren
   '/user/': typeof UserAuthenticatedIndexRoute
   '/products/$productCtg/$productName': typeof StoreProductsProductCtgProductNameRoute
@@ -382,6 +389,7 @@ export interface FileRoutesByTo {
   '/500': typeof errors500LazyRoute
   '/503': typeof errors503LazyRoute
   '/': typeof StoreIndexRoute
+  '/category/$name': typeof StoreCategoryNameRoute
   '/products/$productCtg/$productName': typeof StoreProductsProductCtgProductNameRoute
   '/user/settings/account': typeof UserAuthenticatedSettingsAccountLazyRoute
   '/user/settings/appearance': typeof UserAuthenticatedSettingsAppearanceLazyRoute
@@ -416,6 +424,7 @@ export interface FileRoutesById {
   '/(errors)/500': typeof errors500LazyRoute
   '/(errors)/503': typeof errors503LazyRoute
   '/_store/': typeof StoreIndexRoute
+  '/_store/category/$name': typeof StoreCategoryNameRoute
   '/user/_authenticated/settings': typeof UserAuthenticatedSettingsRouteLazyRouteWithChildren
   '/user/_authenticated/': typeof UserAuthenticatedIndexRoute
   '/_store/products/$productCtg/$productName': typeof StoreProductsProductCtgProductNameRoute
@@ -451,6 +460,7 @@ export interface FileRouteTypes {
     | '/404'
     | '/500'
     | '/503'
+    | '/category/$name'
     | '/user/settings'
     | '/user/'
     | '/products/$productCtg/$productName'
@@ -484,6 +494,7 @@ export interface FileRouteTypes {
     | '/500'
     | '/503'
     | '/'
+    | '/category/$name'
     | '/products/$productCtg/$productName'
     | '/user/settings/account'
     | '/user/settings/appearance'
@@ -517,6 +528,7 @@ export interface FileRouteTypes {
     | '/(errors)/500'
     | '/(errors)/503'
     | '/_store/'
+    | '/_store/category/$name'
     | '/user/_authenticated/settings'
     | '/user/_authenticated/'
     | '/_store/products/$productCtg/$productName'
@@ -679,6 +691,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UserAuthenticatedSettingsRouteLazyRouteImport
       parentRoute: typeof UserAuthenticatedRouteRoute
     }
+    '/_store/category/$name': {
+      id: '/_store/category/$name'
+      path: '/category/$name'
+      fullPath: '/category/$name'
+      preLoaderRoute: typeof StoreCategoryNameRouteImport
+      parentRoute: typeof StoreRouteRoute
+    }
     '/user/_authenticated/users/': {
       id: '/user/_authenticated/users/'
       path: '/users'
@@ -791,6 +810,7 @@ interface StoreRouteRouteChildren {
   StoreAboutRoute: typeof StoreAboutRoute
   StoreOffersRoute: typeof StoreOffersRoute
   StoreIndexRoute: typeof StoreIndexRoute
+  StoreCategoryNameRoute: typeof StoreCategoryNameRoute
   StoreProductsProductCtgProductNameRoute: typeof StoreProductsProductCtgProductNameRoute
 }
 
@@ -798,6 +818,7 @@ const StoreRouteRouteChildren: StoreRouteRouteChildren = {
   StoreAboutRoute: StoreAboutRoute,
   StoreOffersRoute: StoreOffersRoute,
   StoreIndexRoute: StoreIndexRoute,
+  StoreCategoryNameRoute: StoreCategoryNameRoute,
   StoreProductsProductCtgProductNameRoute:
     StoreProductsProductCtgProductNameRoute,
 }
