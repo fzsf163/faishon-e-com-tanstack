@@ -11,39 +11,14 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 
-export default function SignInModal({
-  icon,
-  text,
-  title,
-}: {
-  title: string
-  icon: React.JSX.Element
-  text: string
-}) {
+export default function SignInModal({ title }: { title: string }) {
   const id = useId()
   return (
     <Dialog>
       <DialogTrigger asChild>
         <div className='flex items-center gap-1 w-full cursor-pointer'>
-          <div className='flex flex-col gap-0 sr-only'>
-            <h3 className='font-semibold text-nowrap'>{title}</h3>
-            <small className='text-xs text-nowrap'>{text}</small>
-          </div>
-
-          <Tooltip>
-            <TooltipTrigger>
-              <div className='size-10'>{icon}</div>
-            </TooltipTrigger>
-            <TooltipContent className='text-primary-foreground dark:text-foreground dark:bg-secondary'>
-              <p>{title}</p>
-            </TooltipContent>
-          </Tooltip>
+          <p>{title}</p>
         </div>
       </DialogTrigger>
       <DialogContent>

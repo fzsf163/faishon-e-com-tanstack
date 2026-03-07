@@ -67,7 +67,7 @@ const CategoryItem = ({
 
 const NavbarItems = () => {
   return (
-    <nav className='bg-background text-foreground dark:text-white shadow dark:shadow-foreground/20 py-4 px-6'>
+    <nav className='bg-background text-foreground dark:text-white shadow dark:shadow-foreground/20 py-4 px-6 w-full max-w-[1214px] mx-auto'>
       <div className='flex items-center justify-center gap-4 max-w-7xl mx-auto'>
         <div className='flex items-center flex-wrap xl:flex-nowrap gap-2'>
           {categories.map((category) => (

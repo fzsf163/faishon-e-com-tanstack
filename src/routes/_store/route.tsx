@@ -1,10 +1,9 @@
+import { createFileRoute, Outlet } from '@tanstack/react-router'
 import Footer from '@/components/store/shared/footer'
 import { SheetSide } from '@/components/store/shared/mobileNav'
 import SearchWithModal from '@/components/store/shared/mobileSearch'
 import { StoreTopNavbar } from '@/components/store/shared/navbar'
-import NavbarItems from '@/components/store/shared/secondNav'
 import { ThemeSwitch } from '@/components/theme-switch'
-import { createFileRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/_store')({
   component: RouteComponent,
@@ -20,7 +19,6 @@ function RouteComponent() {
       </div>
       <div className='hidden lg:block sticky top-0 z-50'>
         <StoreTopNavbar></StoreTopNavbar>
-        <NavbarItems></NavbarItems>
       </div>
       {/* <CategoryList /> */}
       <Outlet />

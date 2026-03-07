@@ -113,6 +113,9 @@
   }
 }
 
+@theme {
+  --w-container: 1214px;
+}
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

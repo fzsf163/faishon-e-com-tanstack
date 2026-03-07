@@ -27,7 +27,7 @@ export function ThemeSwitch() {
         <Button
           variant='ghost'
           size='icon'
-          className='rounded-full hover:bg-slate-900 hover:text-white dark:bg-secondary'
+          className='rounded-full hover:bg-primary hover:text-white dark:bg-secondary'
         >
           <IconSun className=' rotate-0 scale-150 transition-all dark:-rotate-90 dark:scale-0' />
           <IconMoon className='absolute  rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-150' />

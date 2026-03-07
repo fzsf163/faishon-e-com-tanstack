@@ -14,8 +14,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UserRouteRouteImport } from './routes/user/route'
 import { Route as StoreRouteRouteImport } from './routes/_store/route'
 import { Route as StoreIndexRouteImport } from './routes/_store/index'
-import { Route as StoreOffersRouteImport } from './routes/_store/offers'
 import { Route as StoreAboutRouteImport } from './routes/_store/about'
+import { Route as StoreMenusRouteImport } from './routes/_store/$menus'
 import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
 import { Route as UserAuthenticatedRouteRouteImport } from './routes/user/_authenticated/route'
@@ -151,14 +151,14 @@ const authForgotPasswordLazyRoute = authForgotPasswordLazyRouteImport
   .lazy(() =>
     import('./routes/(auth)/forgot-password.lazy').then((d) => d.Route),
   )
-const StoreOffersRoute = StoreOffersRouteImport.update({
-  id: '/offers',
-  path: '/offers',
-  getParentRoute: () => StoreRouteRoute,
-} as any)
 const StoreAboutRoute = StoreAboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => StoreRouteRoute,
+} as any)
+const StoreMenusRoute = StoreMenusRouteImport.update({
+  id: '/$menus',
+  path: '/$menus',
   getParentRoute: () => StoreRouteRoute,
 } as any)
 const authSignInRoute = authSignInRouteImport.update({
@@ -345,8 +345,8 @@ export interface FileRoutesByFullPath {
   '/user': typeof UserAuthenticatedRouteRouteWithChildren
   '/otp': typeof authOtpRoute
   '/sign-in': typeof authSignInRoute
+  '/$menus': typeof StoreMenusRoute
   '/about': typeof StoreAboutRoute
-  '/offers': typeof StoreOffersRoute
   '/forgot-password': typeof authForgotPasswordLazyRoute
   '/sign-in-2': typeof authSignIn2LazyRoute
   '/sign-up': typeof authSignUpLazyRoute
@@ -378,8 +378,8 @@ export interface FileRoutesByTo {
   '/user': typeof UserAuthenticatedIndexRoute
   '/otp': typeof authOtpRoute
   '/sign-in': typeof authSignInRoute
+  '/$menus': typeof StoreMenusRoute
   '/about': typeof StoreAboutRoute
-  '/offers': typeof StoreOffersRoute
   '/forgot-password': typeof authForgotPasswordLazyRoute
   '/sign-in-2': typeof authSignIn2LazyRoute
   '/sign-up': typeof authSignUpLazyRoute
@@ -413,8 +413,8 @@ export interface FileRoutesById {
   '/user/_authenticated': typeof UserAuthenticatedRouteRouteWithChildren
   '/(auth)/otp': typeof authOtpRoute
   '/(auth)/sign-in': typeof authSignInRoute
+  '/_store/$menus': typeof StoreMenusRoute
   '/_store/about': typeof StoreAboutRoute
-  '/_store/offers': typeof StoreOffersRoute
   '/(auth)/forgot-password': typeof authForgotPasswordLazyRoute
   '/(auth)/sign-in-2': typeof authSignIn2LazyRoute
   '/(auth)/sign-up': typeof authSignUpLazyRoute
@@ -450,8 +450,8 @@ export interface FileRouteTypes {
     | '/user'
     | '/otp'
     | '/sign-in'
+    | '/$menus'
     | '/about'
-    | '/offers'
     | '/forgot-password'
     | '/sign-in-2'
     | '/sign-up'
@@ -483,8 +483,8 @@ export interface FileRouteTypes {
     | '/user'
     | '/otp'
     | '/sign-in'
+    | '/$menus'
     | '/about'
-    | '/offers'
     | '/forgot-password'
     | '/sign-in-2'
     | '/sign-up'
@@ -517,8 +517,8 @@ export interface FileRouteTypes {
     | '/user/_authenticated'
     | '/(auth)/otp'
     | '/(auth)/sign-in'
+    | '/_store/$menus'
     | '/_store/about'
-    | '/_store/offers'
     | '/(auth)/forgot-password'
     | '/(auth)/sign-in-2'
     | '/(auth)/sign-up'
@@ -642,18 +642,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authForgotPasswordLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_store/offers': {
-      id: '/_store/offers'
-      path: '/offers'
-      fullPath: '/offers'
-      preLoaderRoute: typeof StoreOffersRouteImport
-      parentRoute: typeof StoreRouteRoute
-    }
     '/_store/about': {
       id: '/_store/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof StoreAboutRouteImport
+      parentRoute: typeof StoreRouteRoute
+    }
+    '/_store/$menus': {
+      id: '/_store/$menus'
+      path: '/$menus'
+      fullPath: '/$menus'
+      preLoaderRoute: typeof StoreMenusRouteImport
       parentRoute: typeof StoreRouteRoute
     }
     '/(auth)/sign-in': {
@@ -807,16 +807,16 @@ declare module '@tanstack/react-router' {
 }
 
 interface StoreRouteRouteChildren {
+  StoreMenusRoute: typeof StoreMenusRoute
   StoreAboutRoute: typeof StoreAboutRoute
-  StoreOffersRoute: typeof StoreOffersRoute
   StoreIndexRoute: typeof StoreIndexRoute
   StoreCategoryNameRoute: typeof StoreCategoryNameRoute
   StoreProductsProductCtgProductNameRoute: typeof StoreProductsProductCtgProductNameRoute
 }
 
 const StoreRouteRouteChildren: StoreRouteRouteChildren = {
+  StoreMenusRoute: StoreMenusRoute,
   StoreAboutRoute: StoreAboutRoute,
-  StoreOffersRoute: StoreOffersRoute,
   StoreIndexRoute: StoreIndexRoute,
   StoreCategoryNameRoute: StoreCategoryNameRoute,
   StoreProductsProductCtgProductNameRoute:

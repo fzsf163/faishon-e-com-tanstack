@@ -34,15 +34,15 @@ export const SideBanner_Images = [
 
 export const Ready_For_Order = [
   {
-    name: 'image1',
+    name: 'image12',
     href: 'https://shorturl.at/YVFpj',
   },
   {
-    name: 'image2',
+    name: 'image23',
     href: 'https://shorturl.at/SaGPg',
   },
   {
-    name: 'image3',
+    name: 'image34',
     href: 'https://shorturl.at/tfys3',
   },
   {
@@ -62,31 +62,31 @@ export const Ready_For_Order = [
     href: 'https://tinyurl.com/4deptpvy',
   },
   {
-    name: 'image1',
+    name: 'image13',
     href: 'https://shorturl.at/YVFpj',
   },
   {
-    name: 'image2',
+    name: 'image24',
     href: 'https://shorturl.at/SaGPg',
   },
   {
-    name: 'image3',
+    name: 'image35',
     href: 'https://shorturl.at/tfys3',
   },
   {
-    name: 'image4',
+    name: 'image43',
     href: 'https://shorturl.at/PbXI3',
   },
   {
-    name: 'image5',
+    name: 'image54',
     href: 'https://shorturl.at/JRpEd',
   },
   {
-    name: 'image1',
+    name: 'image14',
     href: 'https://shorturl.at/YVFpj',
   },
   {
-    name: 'image2',
+    name: 'image25',
     href: 'https://shorturl.at/SaGPg',
   },
 ]

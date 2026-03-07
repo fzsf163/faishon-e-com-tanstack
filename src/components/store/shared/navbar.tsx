@@ -1,24 +1,24 @@
 import { Link } from '@tanstack/react-router'
+import { ChevronDown } from 'lucide-react'
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
 import { ThemeSwitch } from '@/components/theme-switch'
 import { StoreTopBarData } from '../data/navbarData'
-import SignInModal from './modalSIngIn'
 import SearchWithIcon from './searchWithIcon'
 import logodark from '/images/nexf-blue-logo.svg?url'
 import logolight from '/images/nexf-white-logo.svg?url'
 
 export function StoreTopNavbar() {
   return (
-    <div className='w-full  bg-slate-900 text-primary-foreground dark:text-foreground dark:bg-secondary'>
+    <div className='w-full max-w-container mx-auto  bg-white text-black dark:text-foreground dark:bg-secondary'>
       <div className='flex items-center justify-center gap-10 py-5 '>
         <Link to='/'>
-          <img className='size-16 h-fit  dark:hidden' src={logodark}></img>
+          <img className='w-[84px] h-[20px]  dark:hidden' src={logodark}></img>
           <img
-            className='size-16 h-fit hidden dark:block'
+            className='w-[84px] h-[20px] hidden dark:block'
             src={logolight}
           ></img>
         </Link>
@@ -30,40 +30,66 @@ export function StoreTopNavbar() {
     </div>
   )
 }
+const HoverComponent = ({
+  title,
+  children,
+}: {
+  title: string
+  children?: {
+    title: string
+  }[]
+}) => {
+  return (
+    <HoverCard>
+      <HoverCardTrigger>
+        <div className='flex items-center justify-center gap-1 font-semibold'>
+          <p>{title}</p>
+          <p>
+            <ChevronDown></ChevronDown>
+          </p>
+        </div>
+      </HoverCardTrigger>
+      <HoverCardContent>
+        {children?.map((c) => {
+          return (
+            <Link
+              to='/$menus'
+              params={{ menus: c.title }}
+              key={c.title}
+              className='flex items-center gap-6 w-full font-semibold '
+            >
+              <p>{c.title}</p>
+            </Link>
+          )
+        })}
+      </HoverCardContent>
+    </HoverCard>
+  )
+}
 
 function NavMap() {
   return (
     <div className='flex items-center justify-center gap-10'>
-      {StoreTopBarData.map(({ icon, text, title }) => {
-        if (title === 'Offers') {
-          return (
-            <Link
-              to='/offers'
-              key={title}
-              className='flex items-center gap-1 w-full '
-            >
-              <div className='flex flex-col gap-0 sr-only'>
-                <h3 className='font-semibold text-nowrap'>{title}</h3>
-                <small className='text-xs text-nowrap'>{text}</small>
-              </div>
-
-              <Tooltip>
-                <TooltipTrigger>
-                  <div className='size-10'>{icon}</div>
-                </TooltipTrigger>
-                <TooltipContent className='text-primary-foreground dark:text-foreground dark:bg-secondary'>
-                  <p>{title}</p>
-                </TooltipContent>
-              </Tooltip>
-            </Link>
-          )
-        } else {
-          return (
-            <div key={title}>
-              <SignInModal icon={icon} text={text} title={title}></SignInModal>
-            </div>
-          )
-        }
+      {StoreTopBarData.map(({ title, children }) => {
+        return (
+          <div key={title}>
+            {children?.length ? (
+              <HoverComponent
+                title={title}
+                children={children}
+              ></HoverComponent>
+            ) : (
+              <Link
+                to='/$menus'
+                params={{ menus: title }}
+                key={title}
+                className='flex items-center gap-1 w-full font-semibold '
+              >
+                <p>{title}</p>
+              </Link>
+            )}
+          </div>
+        )
       })}
     </div>
   )
