@@ -52,7 +52,7 @@ const CategoryItem = ({
         <div
           className={`absolute ${
             level === 0 ? 'top-full left-0' : 'top-0 left-full'
-          } bg-background shadow-lg rounded-lg py-2 min-w-[200px] transition-opacity ${
+          } bg-background shadow-lg rounded-lg py-2 mask-linear-to-yellow-50 transition-opacity ${
             isHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
           } transition-all duration-200 z-10`}
         >
@@ -67,7 +67,7 @@ const CategoryItem = ({
 
 const NavbarItems = () => {
   return (
-    <nav className='bg-background text-foreground dark:text-white shadow dark:shadow-foreground/20 py-4 px-6 w-full max-w-[1214px] mx-auto'>
+    <nav className='bg-background text-foreground dark:text-white shadow-sm dark:shadow-foreground/20 py-4 px-6 w-full container-custom mx-auto'>
       <div className='flex items-center justify-center gap-4 max-w-7xl mx-auto'>
         <div className='flex items-center flex-wrap xl:flex-nowrap gap-2'>
           {categories.map((category) => (

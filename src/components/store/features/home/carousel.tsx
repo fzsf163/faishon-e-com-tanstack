@@ -34,7 +34,7 @@ export function CarouselMain() {
   const mblCarosuel_Images = Carousel_Images.concat(SideBanner_Images)
   const carousel_images = ismobile ? mblCarosuel_Images : Carousel_Images
   return (
-    <div className='w-full max-w-screen-xl'>
+    <div className='w-full max-w-(--breakpoint-xl)'>
       <Carousel
         opts={{
           align: 'start',
@@ -54,7 +54,7 @@ export function CarouselMain() {
             <CarouselItem key={C.name}>
               <div>
                 <Card className='border-none h-fit'>
-                  <CardContent className='sm:h-[40rem] w-full p-0'>
+                  <CardContent className='sm:h-160 w-full p-0'>
                     <img
                       className='h-full w-full sm:rounded-xl'
                       src={C.href}

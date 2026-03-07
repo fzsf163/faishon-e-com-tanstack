@@ -149,7 +149,7 @@ export function UsersActionDialog({ currentRow, open, onOpenChange }: Props) {
             Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
-        <ScrollArea className='h-[26.25rem] w-full pr-4 -mr-4 py-1'>
+        <ScrollArea className='h-105 w-full pr-4 -mr-4 py-1'>
           <Form {...form}>
             <form
               id='user-form'

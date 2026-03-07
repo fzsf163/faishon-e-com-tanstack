@@ -1,10 +1,10 @@
-import logolight from '/images/nexf-white-logo.svg?url'
+import logolight from '/images/nexf-white-logo.svg'
 
 export default function Footer() {
   return (
     <div>
       <footer className='bg-gray-900'>
-        <div className='max-w-screen-xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24'>
+        <div className='max-w-(--breakpoint-xl) px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24'>
           <div className='grid grid-cols-1 gap-8 lg:grid-cols-3'>
             <div>
               <div className='flex justify-center text-primary-foreground sm:justify-start'>

@@ -13,14 +13,11 @@ import logolight from '/images/nexf-white-logo.svg?url'
 
 export function StoreTopNavbar() {
   return (
-    <div className='w-full max-w-container mx-auto  bg-white text-black dark:text-foreground dark:bg-secondary'>
+    <div className='w-full container-custom mx-auto  bg-white text-black dark:text-foreground dark:bg-secondary'>
       <div className='flex items-center justify-center gap-10 py-5 '>
         <Link to='/'>
-          <img className='w-[84px] h-[20px]  dark:hidden' src={logodark}></img>
-          <img
-            className='w-[84px] h-[20px] hidden dark:block'
-            src={logolight}
-          ></img>
+          <img className='w-21 h-5  dark:hidden' src={logodark}></img>
+          <img className='w-21 h-5 hidden dark:block' src={logolight}></img>
         </Link>
         <SearchWithIcon></SearchWithIcon>
         <NavMap />

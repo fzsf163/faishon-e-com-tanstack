@@ -30,7 +30,7 @@ export function ProductCarousel() {
   // }, [api])
 
   return (
-    <div className='w-full max-w-screen-2xl'>
+    <div className='w-full max-w-(--breakpoint-2xl)'>
       <Carousel
         opts={{
           align: 'start',
@@ -50,7 +50,7 @@ export function ProductCarousel() {
             <CarouselItem key={R.name} className='sm:basis-1/6'>
               <div className='p-2'>
                 <Card className='border-none h-fit space-y-4'>
-                  <CardContent className='flex h-full w-full sm:h-[14rem] items-center justify-center p-0'>
+                  <CardContent className='flex h-full w-full sm:h-56 items-center justify-center p-0'>
                     <img
                       className='h-full w-full sm:rounded-lg'
                       src={R.href}

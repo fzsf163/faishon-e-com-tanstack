@@ -18,9 +18,9 @@ export default function TabsGroupProduct() {
           {Ready_For_Order.map((R) => (
             <div key={R.name}>
               <Card className='border-none'>
-                <CardContent className='flex h-[8rem] sm:h-[14rem] items-center justify-center sm:p-6'>
+                <CardContent className='flex h-32 sm:h-56 items-center justify-center sm:p-6'>
                   <img
-                    className='shadow rounded h-full w-full'
+                    className='shadow-sm rounded h-full w-full'
                     src={R.href}
                     alt={R.name}
                   ></img>
@@ -50,9 +50,9 @@ export default function TabsGroupProduct() {
           {Carousel_Images.map((R) => (
             <div key={R.name}>
               <Card className='border-none'>
-                <CardContent className='flex h-[8rem] sm:h-[14rem] items-center justify-center sm:p-6'>
+                <CardContent className='flex h-32 sm:h-56 items-center justify-center sm:p-6'>
                   <img
-                    className='shadow rounded h-full w-full'
+                    className='shadow-sm rounded h-full w-full'
                     src={R.href}
                     alt={R.name}
                   ></img>
