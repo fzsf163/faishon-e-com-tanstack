@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
-import { ChevronDown } from 'lucide-react'
+import { ArrowRightToLine, ChevronDown, ShoppingCart } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import {
   HoverCard,
   HoverCardContent,
@@ -13,8 +14,8 @@ import logolight from '/images/nexf-white-logo.svg?url'
 
 export function StoreTopNavbar() {
   return (
-    <div className='w-full container-custom mx-auto  bg-white text-black dark:text-foreground dark:bg-secondary'>
-      <div className='flex items-center justify-center gap-10 py-5 '>
+    <div className='w-full bg-white  text-black dark:text-foreground dark:bg-secondary'>
+      <div className='flex container-custom mx-auto w-full items-center justify-around gap-10 py-5  '>
         <Link to='/'>
           <img className='w-21 h-5  dark:hidden' src={logodark}></img>
           <img className='w-21 h-5 hidden dark:block' src={logolight}></img>
@@ -22,6 +23,10 @@ export function StoreTopNavbar() {
         <SearchWithIcon></SearchWithIcon>
         <NavMap />
         <ThemeSwitch />
+        <ShoppingCart></ShoppingCart>
+        <Button>
+          <ArrowRightToLine></ArrowRightToLine> Login
+        </Button>
         {/* <ProfileDropdown /> */}
       </div>
     </div>

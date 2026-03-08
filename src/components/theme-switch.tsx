@@ -25,9 +25,9 @@ export function ThemeSwitch() {
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
-          variant='ghost'
+          variant='default'
           size='icon'
-          className='rounded-full hover:bg-primary hover:text-white dark:bg-secondary'
+          className='rounded-theme bg-accent text-black hover:bg-primary hover:text-white dark:text-white dark:hover:bg-primary dark:bg-muted-foreground'
         >
           <IconSun className=' rotate-0 scale-150 transition-all dark:-rotate-90 dark:scale-0' />
           <IconMoon className='absolute  rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-150' />
