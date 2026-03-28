@@ -12,46 +12,45 @@ import TabsGroupProduct from './productTabs'
 export function Home() {
   const ismobile = useIsMobile()
   return (
-    <div>
-      <div className='flex shrink-0 items-stretch flex-wrap lg:flex-nowrap justify-center gap-5 sm:mt-10'>
-        <CarouselMain></CarouselMain>
-        <div className='sm:grid grid-cols-1 gap-5 h-fit hidden'>
-          {SideBanner_Images.map((S) => {
-            return (
-              <img
-                className='h-[19.2rem] w-full rounded-lg'
-                src={S.href}
-                key={S.name}
-                alt={S.name}
-              ></img>
-            )
-          })}
+    <div className='container-custom'>
+      <div className='grid grid-cols-10 gap-6 mt-6'>
+        <div className='col-span-7'>
+          <CarouselMain></CarouselMain>
+        </div>
+        <div className='col-span-3'>
+          <div className='sm:grid grid-cols-1 gap-6  hidden'>
+            {SideBanner_Images.map((S) => {
+              return (
+                <img
+                  className='h-full md:min-h-54 w-full max-h-54 rounded-lg object-cover'
+                  src={S.href}
+                  key={S.name}
+                  alt={S.name}
+                ></img>
+              )
+            })}
+          </div>
         </div>
       </div>
 
-      <div className='mt-2 sm:mt-20 grid grid-cols-3 sm:grid-cols-6 gap-5 sm:gap-10 sm:max-w-(--breakpoint-2xl) mx-auto w-fit items-center justify-around p-5'>
+      <div className='mt-6 flex gap-1 sm:gap-10 sm:max-w-(--breakpoint-2xl) mx-auto  items-center justify-around bg-[#F4FAFF] dark:bg-accent h-20 w-full rounded-theme'>
         {Ctg_List.map((C) => (
           <div key={C.name}>
-            <Card className='border-none shadow-none'>
-              <CardContent className='grid grid-cols-1 gap-2 place-items-center'>
-                <p className='rounded-full p-6 bg-slate-200'>{C.icon}</p>
-                <p className='font-semibold text-sm sm:text-lg text-nowrap'>
-                  {C.name}
-                </p>{' '}
-              </CardContent>
-            </Card>
+            <div className='border-none shadow-none dark:bg-accent'>
+              <div className='flex items-center justify-center gap-2'>
+                <img className='' src={C.icon}></img>
+                <p className='font-normal text-sm text-nowrap'>{C.name}</p>{' '}
+              </div>
+            </div>
           </div>
         ))}
       </div>
 
-      <div className='sm:mt-10'>
+      <div className='sm:mt-25'>
         <div className='text-center space-y-2'>
-          <p className='font-semibold sm:text-2xl'>FEATURED CATEGORIES</p>
-          <p className='font-normal sm:text-xl'>
-            Get your desired product from featured category
-          </p>
+          <p className='font-semibold sm:text-2xl'>Popular Categories</p>
         </div>
-        <div className=' mt-5 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 max-w-(--breakpoint-2xl) mx-auto p-2 sm:p-0'>
+        <div className='grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 max-w-(--breakpoint-2xl) mx-auto p-2 sm:p-0'>
           {Ready_For_Order.map((R) => (
             <div key={R.name}>
               <Card className='border-none'>
@@ -100,7 +99,7 @@ export function Home() {
           return (
             <div key={S.name}>
               <img
-                className='shadow-sm rounded h-full w-full'
+                className='shadow-sm rounded-theme h-full w-full'
                 src={S.href}
                 alt={S.name}
               ></img>

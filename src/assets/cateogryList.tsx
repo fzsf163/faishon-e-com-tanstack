@@ -1,34 +1,22 @@
-import {
-  Footprints,
-  Shirt,
-  BriefcaseBusiness,
-  Clock,
-  Watch,
-} from 'lucide-react'
-
 export const Ctg_List = [
   {
-    name: 'T-Shirts',
-    icon: <Shirt className='size-4 sm:size-10 md:size-20' />,
+    name: 'Authetic Product',
+    icon: 'public/nexf/ctgs/authenticProduct.svg',
   },
   {
-    name: 'Shoes',
-    icon: <Footprints className='size-4 sm:size-10 md:size-20' />,
+    name: 'Cash On Delivery',
+    icon: 'public/nexf/ctgs/cashOnDelivery.svg',
   },
   {
-    name: 'Bags',
-    icon: <BriefcaseBusiness className='size-4 sm:size-10 md:size-20' />,
+    name: 'Return Policy',
+    icon: 'public/nexf/ctgs/easyReturnPolicy.svg',
   },
   {
-    name: 'Watches',
-    icon: <Watch className='size-4 sm:size-10 md:size-20' />,
+    name: 'Premium Quality',
+    icon: 'public/nexf/ctgs/premimumQuality.svg',
   },
   {
-    name: 'Pants',
-    icon: <Shirt className='size-4 sm:size-10 md:size-20' />,
-  },
-  {
-    name: 'Accesories',
-    icon: <Clock className='size-4 sm:size-10 md:size-20' />,
+    name: 'Secured Payment',
+    icon: 'public/nexf/ctgs/securedPayment.svg',
   },
 ]

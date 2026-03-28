@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
-import { Star } from 'lucide-react'
 import { Carousel_Images, SideBanner_Images } from '@/assets/imageObj'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Card, CardContent } from '@/components/ui/card'
@@ -53,10 +52,10 @@ export function CarouselMain() {
           {carousel_images.map((C) => (
             <CarouselItem key={C.name}>
               <div>
-                <Card className='border-none h-fit'>
+                <Card className='border-none h-full max-h-114'>
                   <CardContent className='sm:h-160 w-full p-0'>
                     <img
-                      className='h-full w-full sm:rounded-xl'
+                      className='h-full w-full max-h-114 sm:rounded-theme object-cover'
                       src={C.href}
                       alt={C.name}
                     ></img>
@@ -66,14 +65,17 @@ export function CarouselMain() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className='absolute left-10' />
-        <CarouselNext className='absolute right-10' />
+        <CarouselPrevious
+          variant={'outline'}
+          className='absolute left-10 bg-inherit text-white'
+        />
+        <CarouselNext
+          variant={'outline'}
+          className='absolute right-10 bg-inherit text-white'
+        />
       </Carousel>
-      {/*<div className='py-2 text-center text-sm text-muted-foreground'>
-        Slide {current} of {count}
-        {'⭐'.repeat(current)}
-      </div>*/}
-      <div className='py-2 flex justify-center gap-1'>
+
+      <div className='py-2 flex justify-center gap-2'>
         {Array.from({ length: count }).map((_, index) => {
           const isActive = index === current - 1
 
@@ -81,12 +83,19 @@ export function CarouselMain() {
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={`text-xl transition-transform duration-200
-                ${isActive ? 'text-yellow-400 scale-125 ' : 'text-gray-400 hover:scale-110'}
-              `}
+              className='flex items-center'
               aria-label={`Go to slide ${index + 1}`}
             >
-              <Star></Star>
+              <span
+                className={`
+                  h-2 rounded-full transition-all duration-300 ease-in-out
+                  ${
+                    isActive
+                      ? 'w-6 bg-accent-foreground' // active → stretched
+                      : 'w-2 bg-gray-400 hover:bg-gray-500'
+                  } // inactive → dot
+                `}
+              />
             </button>
           )
         })}

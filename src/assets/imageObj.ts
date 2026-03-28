@@ -1,34 +1,34 @@
 export const Carousel_Images = [
   {
     name: 'image1',
-    href: 'https://shorturl.at/YVFpj',
+    href: 'public/nexf/banner/banner-1.jpg',
   },
   {
     name: 'image2',
-    href: 'https://shorturl.at/SaGPg',
+    href: 'public/nexf/banner/banner-4.jpg',
   },
   {
     name: 'image3',
-    href: 'https://shorturl.at/tfys3',
+    href: 'public/nexf/banner/banner-5.jpg',
   },
   {
-    name: 'image4',
-    href: 'https://shorturl.at/PbXI3',
+    name: 'image6',
+    href: 'public/nexf/banner/banner-2.jpg',
   },
   {
-    name: 'image5',
-    href: 'https://shorturl.at/JRpEd',
+    name: 'image7',
+    href: 'public/nexf/banner/banner-3.jpg',
   },
 ]
 
 export const SideBanner_Images = [
   {
     name: 'image6',
-    href: 'https://rb.gy/iuhkop',
+    href: 'public/nexf/banner/banner-2.jpg',
   },
   {
     name: 'image7',
-    href: 'https://tinyurl.com/4deptpvy',
+    href: 'public/nexf/banner/banner-3.jpg',
   },
 ]
 
