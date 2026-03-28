@@ -8,6 +8,7 @@ import { ProductCarousel } from '../../shared/productCarousel'
 import { CarouselMain } from './carousel'
 import { CategoryCarousel } from './categoryCarousel'
 import TabsGroupProduct from './productTabs'
+import TrendingProducts from './trendingProducts'
 
 export function Home() {
   const ismobile = useIsMobile()
@@ -45,7 +46,6 @@ export function Home() {
           </div>
         ))}
       </div>
-
       <div className='sm:mt-25'>
         <div className='text-center space-y-2'>
           <p className='font-semibold sm:text-2xl'>Popular Categories</p>
@@ -53,6 +53,10 @@ export function Home() {
         <div className='flex items-center justify-center mt-5 sm:mt-10'>
           <CategoryCarousel></CategoryCarousel>
         </div>
+      </div>
+
+      <div className='sm:mt-25'>
+        <TrendingProducts></TrendingProducts>
       </div>
 
       <div className=' mt-5 sm:mt-10'>

@@ -50,7 +50,7 @@ export function CategoryCarousel() {
           {CategoryBlocks.map((R, index) => {
             const style = styles[index % styles.length]
             return (
-              <CarouselItem key={R.name} className='sm:basis-1/4'>
+              <CarouselItem key={R.name + index} className='sm:basis-1/4'>
                 <div className='p-2 max-w-80 sm:min-w-71.5'>
                   <div className=' rounded-theme relative z-0 overflow-hidden'>
                     <div className='flex h-full w-full max-h-49.25 sm:h-56 items-center justify-between rounded-theme gap-2'>
