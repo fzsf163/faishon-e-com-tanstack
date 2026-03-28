@@ -32,6 +32,50 @@ export const SideBanner_Images = [
   },
 ]
 
+export const CategoryBlocks = [
+  {
+    name: 'For Men',
+    productsCount: '463',
+    href: '/public/nexf/category/men.png',
+  },
+  {
+    name: 'For Women',
+    productsCount: '345',
+    href: '/public/nexf/category/women.png',
+  },
+  {
+    name: 'For Kids',
+    productsCount: '544',
+    href: '/public/nexf/category/kids.png',
+  },
+  {
+    name: 'T-Shirts',
+    productsCount: '463',
+    href: '/public/nexf/category/boy.png',
+  },
+  {
+    name: 'For Kids',
+    productsCount: '544',
+    href: '/public/nexf/category/kids.png',
+  },
+  {
+    name: 'For Women',
+    productsCount: '345',
+    href: '/public/nexf/category/women.png',
+  },
+
+  {
+    name: 'For Men',
+    productsCount: '463',
+    href: '/public/nexf/category/men.png',
+  },
+  {
+    name: 'T-Shirts',
+    productsCount: '463',
+    href: '/public/nexf/category/boy.png',
+  },
+]
+
 export const Ready_For_Order = [
   {
     name: 'image12',

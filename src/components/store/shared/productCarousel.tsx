@@ -1,6 +1,5 @@
 // import { useEffect, useState } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
-import { Ready_For_Order } from '@/assets/imageObj'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import {
@@ -11,7 +10,16 @@ import {
   CarouselPrevious, // type CarouselApi,
 } from '@/components/ui/carousel'
 
-export function ProductCarousel() {
+type Product = {
+  name: string
+  href: string
+  productsCount?: string
+}
+type ProductCarouselProps = {
+  product_object: Product[]
+}
+
+export function ProductCarousel({ product_object }: ProductCarouselProps) {
   // const [api, setApi] = useState<CarouselApi>()
   // const [current, setCurrent] = useState(0)
   // const [count, setCount] = useState(0)
@@ -46,7 +54,7 @@ export function ProductCarousel() {
         ]}
       >
         <CarouselContent>
-          {Ready_For_Order.map((R) => (
+          {product_object.map((R) => (
             <CarouselItem key={R.name} className='sm:basis-1/6'>
               <div className='p-2'>
                 <Card className='border-none h-fit space-y-4'>
