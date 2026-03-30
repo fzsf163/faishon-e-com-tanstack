@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { Ctg_List } from '@/assets/cateogryList'
 import { productsTopSellings, SideBanner_Images } from '@/assets/imageObj'
-import { useIsMobile } from '@/hooks/use-mobile'
+// import { useIsMobile } from '@/hooks/use-mobile'
 import { Button } from '@/components/ui/button'
 import { ProductCarousel } from '../../shared/productCarousel'
 import { CarouselMain } from './carousel'
@@ -10,7 +10,7 @@ import LatestOfersCarousel from './latestOffersCarousel'
 import TrendingProducts from './trendingProducts'
 
 export function Home() {
-  const ismobile = useIsMobile()
+  // const ismobile = useIsMobile()
   return (
     <div className='container-custom'>
       <div className='grid grid-cols-10 gap-6 mt-6'>

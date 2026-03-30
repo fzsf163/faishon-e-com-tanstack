@@ -89,7 +89,7 @@ export default function LatestOfersCarousel() {
             const style = styles[index % styles.length]
             return (
               <CarouselItem key={L.name + index} className='sm:basis-1/2'>
-                <div className='grid grid-cols-2'>
+                <div className={`grid grid-cols-2 ${style.bg} rounded-theme`}>
                   <div>
                     <img
                       src={L.href}
@@ -98,10 +98,7 @@ export default function LatestOfersCarousel() {
                     ></img>
                   </div>
                   <div
-                    className='rounded-theme grid place-content-evenly pl-6'
-                    style={{
-                      backgroundColor: style.bg,
-                    }}
+                    className={`rounded-theme grid place-content-evenly pl-6`}
                   >
                     <p className='flex items-center justify-start gap-2'>
                       <p className='flex items-center justify-start'>
@@ -131,7 +128,7 @@ export default function LatestOfersCarousel() {
                     </p>
                     <div className='space-y-2'>
                       <Badge className='rounded-full bg-red-100/40 text-red-500 shadow-none w-fit'>
-                        {L.discount} OFF
+                        {L.discount ? L.discount + 'OFF' : null}
                       </Badge>
                       <div className='flex items-baseline gap-2 justify-start'>
                         <p className='font-semibold text-xl'>
