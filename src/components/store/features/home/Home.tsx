@@ -1,18 +1,12 @@
-import { IconArrowMoveRight } from '@tabler/icons-react'
 import { ArrowRight } from 'lucide-react'
 import { Ctg_List } from '@/assets/cateogryList'
-import {
-  productsNewArrivals,
-  productsTopSellings,
-  SideBanner_Images,
-} from '@/assets/imageObj'
+import { productsTopSellings, SideBanner_Images } from '@/assets/imageObj'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Button } from '@/components/ui/button'
 import { ProductCarousel } from '../../shared/productCarousel'
 import { CarouselMain } from './carousel'
 import { CategoryCarousel } from './categoryCarousel'
 import LatestOfersCarousel from './latestOffersCarousel'
-import TabsGroupProduct from './productTabs'
 import TrendingProducts from './trendingProducts'
 
 export function Home() {
@@ -111,6 +105,10 @@ export function Home() {
             </div>
           )
         })}
+      </div>
+
+      <div className='mt-25'>
+        <p className='font-semibold sm:text-2xl text-center'>Customer Review</p>
       </div>
     </div>
   )

@@ -24,11 +24,11 @@ export const Carousel_Images = [
 export const SideBanner_Images = [
   {
     name: 'image6',
-    href: 'public/nexf/banner/banner-2.jpg',
+    href: 'public/nexf/banner/banner-4.jpg',
   },
   {
     name: 'image7',
-    href: 'public/nexf/banner/banner-3.jpg',
+    href: 'public/nexf/banner/banner-2.jpg',
   },
 ]
 
