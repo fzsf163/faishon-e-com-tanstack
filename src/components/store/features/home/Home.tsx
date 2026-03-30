@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { ProductCarousel } from '../../shared/productCarousel'
 import { CarouselMain } from './carousel'
 import { CategoryCarousel } from './categoryCarousel'
+import CustomerReviewCarousel from './customerCarousel'
 import LatestOfersCarousel from './latestOffersCarousel'
 import TrendingProducts from './trendingProducts'
 
@@ -109,6 +110,9 @@ export function Home() {
 
       <div className='mt-25'>
         <p className='font-semibold sm:text-2xl text-center'>Customer Review</p>
+        <div className='mt-10'>
+          <CustomerReviewCarousel></CustomerReviewCarousel>
+        </div>
       </div>
     </div>
   )

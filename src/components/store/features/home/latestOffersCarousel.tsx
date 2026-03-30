@@ -100,23 +100,20 @@ export default function LatestOfersCarousel() {
                   <div
                     className={`rounded-theme grid place-content-evenly pl-6`}
                   >
-                    <p className='flex items-center justify-start gap-2'>
+                    <div className='flex items-center justify-start gap-2'>
                       <p className='flex items-center justify-start'>
                         {Array.from({ length: Number(L.stars) }).map((_, i) => {
                           return (
-                            <div key={i}>
-                              <StarFilledIcon
-                                className='rounded-theme'
-                                color='green'
-                              ></StarFilledIcon>
-                            </div>
+                            <span key={i}>
+                              <StarFilledIcon className='rounded-theme text-orange-400'></StarFilledIcon>
+                            </span>
                           )
                         })}
                       </p>
                       <span className='text-muted-foreground'>
                         {L.review} Reviews
                       </span>
-                    </p>
+                    </div>
                     <div>
                       <p className='font-semibold text-lg'>{L.name}</p>
                       <p className='text-muted-foreground text-sm'>
