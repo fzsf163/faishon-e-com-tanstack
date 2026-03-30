@@ -7,6 +7,7 @@ import { ProductCarousel } from '../../shared/productCarousel'
 import { CarouselMain } from './carousel'
 import { CategoryCarousel } from './categoryCarousel'
 import CustomerReviewCarousel from './customerCarousel'
+import FeaturedShowCase from './featuredShowcase'
 import LatestOfersCarousel from './latestOffersCarousel'
 import TrendingProducts from './trendingProducts'
 
@@ -112,6 +113,15 @@ export function Home() {
         <p className='font-semibold sm:text-2xl text-center'>Customer Review</p>
         <div className='mt-10'>
           <CustomerReviewCarousel></CustomerReviewCarousel>
+        </div>
+      </div>
+
+      <div className='sm:mt-25'>
+        <p className='font-semibold sm:text-2xl text-center'>
+          Featured Showcase
+        </p>
+        <div className='mt-10'>
+          <FeaturedShowCase></FeaturedShowCase>
         </div>
       </div>
     </div>
