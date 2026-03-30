@@ -99,15 +99,6 @@ export function Home() {
         </div>
       </div>
 
-      {/*<div className='mt-5 sm:mt-10'>
-        <p className='font-semibold sm:text-2xl text-center'>
-          Featured Products
-        </p>
-        <div className=' mt-5 sm:mt-10 max-w-(--breakpoint-2xl) mx-auto'>
-          <TabsGroupProduct></TabsGroupProduct>
-        </div>
-      </div>*/}
-
       <div className='mt-25 max-w-(--breakpoint-2xl) mx-auto  grid sm:grid-cols-2 gap-4 p-2 sm:p-0'>
         {SideBanner_Images.map((S) => {
           return (
