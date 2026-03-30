@@ -1,4 +1,3 @@
-// import { useEffect, useState } from 'react'
 import Autoplay from 'embla-carousel-autoplay'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
@@ -20,23 +19,6 @@ type ProductCarouselProps = {
 }
 
 export function ProductCarousel({ product_object }: ProductCarouselProps) {
-  // const [api, setApi] = useState<CarouselApi>()
-  // const [current, setCurrent] = useState(0)
-  // const [count, setCount] = useState(0)
-
-  // useEffect(() => {
-  //   if (!api) {
-  //     return
-  //   }
-
-  //   setCount(api.scrollSnapList().length)
-  //   setCurrent(api.selectedScrollSnap() + 1)
-
-  //   api.on('select', () => {
-  //     setCurrent(api.selectedScrollSnap() + 1)
-  //   })
-  // }, [api])
-
   return (
     <div className='w-full max-w-(--breakpoint-2xl)'>
       <Carousel
@@ -44,7 +26,6 @@ export function ProductCarousel({ product_object }: ProductCarouselProps) {
           align: 'start',
           loop: true,
         }}
-        // setApi={setApi}
         plugins={[
           Autoplay({
             delay: 4000,

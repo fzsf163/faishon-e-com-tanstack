@@ -37,7 +37,6 @@ export function CategoryCarousel() {
           align: 'start',
           loop: true,
         }}
-        // setApi={setApi}
         plugins={[
           Autoplay({
             delay: 4000,
@@ -91,8 +90,11 @@ export function CategoryCarousel() {
             )
           })}
         </CarouselContent>
-        <CarouselPrevious variant={'outline'} className='' />
-        <CarouselNext variant={'outline'} className='' />
+        <CarouselPrevious
+          variant={'outline'}
+          className='text-muted-foreground'
+        />
+        <CarouselNext variant={'outline'} className='text-muted-foreground' />
       </Carousel>
     </div>
   )

@@ -7,6 +7,7 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { ProductCarousel } from '../../shared/productCarousel'
 import { CarouselMain } from './carousel'
 import { CategoryCarousel } from './categoryCarousel'
+import LatestOfersCarousel from './latestOffersCarousel'
 import TabsGroupProduct from './productTabs'
 import TrendingProducts from './trendingProducts'
 
@@ -59,6 +60,12 @@ export function Home() {
         <TrendingProducts></TrendingProducts>
       </div>
 
+      <div className='sm:mt-25'>
+        <p className='font-semibold sm:text-2xl text-center'>Latest Offers</p>
+        <div className='flex items-center justify-center mt-5 sm:mt-10'>
+          <LatestOfersCarousel></LatestOfersCarousel>
+        </div>
+      </div>
       <div className=' mt-5 sm:mt-10'>
         <p className='font-semibold sm:text-2xl text-center'>
           Ready for Order 🔥
