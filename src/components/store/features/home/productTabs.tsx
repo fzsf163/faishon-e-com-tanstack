@@ -15,7 +15,7 @@ export default function TabsGroupProduct() {
       </TabsList>
       <TabsContent value='bestDeals'>
         <div className='mt-5 sm:mt-10 grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 p-2 sm:p-0 sm:gap-10'>
-          {Ready_For_Order.map((R) => (
+          {/*{Ready_For_Order.map((R) => (
             <div key={R.name}>
               <Card className='border-none'>
                 <CardContent className='flex h-32 sm:h-56 items-center justify-center sm:p-6'>
@@ -42,7 +42,7 @@ export default function TabsGroupProduct() {
                 </CardFooter>
               </Card>
             </div>
-          ))}
+          ))}*/}
         </div>
       </TabsContent>
       <TabsContent value='bestSellers'>

@@ -1,9 +1,13 @@
-import { ShoppingBag, ShoppingCart } from 'lucide-react'
+import { IconArrowMoveRight } from '@tabler/icons-react'
+import { ArrowRight } from 'lucide-react'
 import { Ctg_List } from '@/assets/cateogryList'
-import { Ready_For_Order, SideBanner_Images } from '@/assets/imageObj'
+import {
+  productsNewArrivals,
+  productsTopSellings,
+  SideBanner_Images,
+} from '@/assets/imageObj'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { ProductCarousel } from '../../shared/productCarousel'
 import { CarouselMain } from './carousel'
 import { CategoryCarousel } from './categoryCarousel'
@@ -66,25 +70,45 @@ export function Home() {
           <LatestOfersCarousel></LatestOfersCarousel>
         </div>
       </div>
-      <div className=' mt-5 sm:mt-10'>
+
+      <div className='sm:mt-25'>
         <p className='font-semibold sm:text-2xl text-center'>
-          Ready for Order 🔥
+          Tshirt Collection
         </p>
+        <Button className='rounded-theme float-end mr-3 bg-gray-100 shadow-none text-foreground'>
+          View All <ArrowRight></ArrowRight>
+        </Button>
         <div className='flex items-center justify-center mt-5 sm:mt-10'>
-          <ProductCarousel product_object={Ready_For_Order}></ProductCarousel>
+          <ProductCarousel
+            product_object={productsTopSellings}
+          ></ProductCarousel>
         </div>
       </div>
 
-      <div className='mt-5 sm:mt-10'>
+      <div className='sm:mt-25'>
+        <p className='font-semibold sm:text-2xl text-center'>
+          Panjabi Collection
+        </p>
+        <Button className='rounded-theme float-end mr-3 bg-gray-100 shadow-none text-foreground'>
+          View All <ArrowRight></ArrowRight>
+        </Button>
+        <div className='flex items-center justify-center mt-5 sm:mt-10'>
+          <ProductCarousel
+            product_object={productsTopSellings}
+          ></ProductCarousel>
+        </div>
+      </div>
+
+      {/*<div className='mt-5 sm:mt-10'>
         <p className='font-semibold sm:text-2xl text-center'>
           Featured Products
         </p>
         <div className=' mt-5 sm:mt-10 max-w-(--breakpoint-2xl) mx-auto'>
           <TabsGroupProduct></TabsGroupProduct>
         </div>
-      </div>
+      </div>*/}
 
-      <div className='mt-10 max-w-(--breakpoint-2xl) mx-auto  grid sm:grid-cols-2 gap-4 p-2 sm:p-0'>
+      <div className='mt-25 max-w-(--breakpoint-2xl) mx-auto  grid sm:grid-cols-2 gap-4 p-2 sm:p-0'>
         {SideBanner_Images.map((S) => {
           return (
             <div key={S.name}>
@@ -96,43 +120,6 @@ export function Home() {
             </div>
           )
         })}
-      </div>
-
-      <div className='mt-10'>
-        <p className='font-semibold sm:text-2xl text-center'>New Arrival</p>
-        <p className='font-normal text-base text-center mt-4 underline underline-offset-8 decoration-orange-300 decoration-2'>
-          Gadgets
-        </p>
-        <div className=' mt-5 sm:mt-10 grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-2 p-2 sm:p-0 sm:gap-10 max-w-(--breakpoint-2xl) mx-auto'>
-          {Ready_For_Order.map((R) => (
-            <div key={R.name}>
-              <Card className='space-y-4'>
-                <CardContent className='flex sm:h-56 items-center justify-center p-0'>
-                  <img
-                    src={R.href}
-                    alt={R.name}
-                    className='h-full w-full'
-                  ></img>
-                </CardContent>
-                <CardFooter className='flex items-center justify-center gap-2 sm:gap-5 pb-2 sm:p-6'>
-                  <Button
-                    size={ismobile ? 'icon' : 'default'}
-                    className='dark:text-foreground rounded-full sm:rounded-md'
-                  >
-                    {!ismobile ? 'Buy Now' : <ShoppingBag></ShoppingBag>}
-                  </Button>
-                  <Button
-                    size={ismobile ? 'icon' : 'default'}
-                    variant={'outline'}
-                    className='rounded-full sm:rounded-md'
-                  >
-                    {!ismobile ? 'Add To Cart' : <ShoppingCart></ShoppingCart>}
-                  </Button>
-                </CardFooter>
-              </Card>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   )

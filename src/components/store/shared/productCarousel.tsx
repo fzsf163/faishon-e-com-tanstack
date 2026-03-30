@@ -1,6 +1,4 @@
 import Autoplay from 'embla-carousel-autoplay'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import {
   Carousel,
   CarouselContent,
@@ -8,11 +6,15 @@ import {
   CarouselNext,
   CarouselPrevious, // type CarouselApi,
 } from '@/components/ui/carousel'
+import ProductCard from './productCard'
 
 type Product = {
   name: string
   href: string
   productsCount?: string
+  price?: string | null
+  oldprice?: string | null
+  discount?: string | null
 }
 type ProductCarouselProps = {
   product_object: Product[]
@@ -36,27 +38,21 @@ export function ProductCarousel({ product_object }: ProductCarouselProps) {
       >
         <CarouselContent>
           {product_object.map((R) => (
-            <CarouselItem key={R.name} className='sm:basis-1/6'>
+            <CarouselItem key={R.name} className='sm:basis-1/4'>
               <div className='p-2'>
-                <Card className='border-none h-fit space-y-4'>
-                  <CardContent className='flex h-full w-full sm:h-56 items-center justify-center p-0'>
-                    <img
-                      className='h-full w-full sm:rounded-lg'
-                      src={R.href}
-                      alt={R.name}
-                    ></img>
-                  </CardContent>
-                  <CardFooter className='flex items-center justify-center gap-2'>
-                    <Button className='dark:text-foreground'>Buy Now</Button>
-                    <Button variant={'outline'}>Add to cart</Button>
-                  </CardFooter>
-                </Card>
+                <ProductCard
+                  href={R.href}
+                  name={R.name}
+                  price={R.price}
+                  oldprice={R.oldprice}
+                  discount={R.discount}
+                ></ProductCard>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className='absolute left-10 top-1/3' />
-        <CarouselNext className='absolute right-10 top-1/3' />
+        <CarouselPrevious className='text-muted-foreground' />
+        <CarouselNext className='text-muted-foreground' />
       </Carousel>
     </div>
   )

@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button'
 type Products = {
   name: string
   href: string
-  price: string
-  oldprice?: string
-  discount?: string
+  price?: string | null
+  oldprice?: string | null
+  discount?: string | null
 }
 
 export default function ProductCard({

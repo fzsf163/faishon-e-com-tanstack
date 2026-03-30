@@ -1,8 +1,6 @@
-import { number } from 'zod'
 import { StarFilledIcon } from '@radix-ui/react-icons'
 import Autoplay from 'embla-carousel-autoplay'
-import { ArrowRight, Heart, ShoppingCartIcon, Star } from 'lucide-react'
-import { CategoryBlocks } from '@/assets/imageObj'
+import { Heart, ShoppingCartIcon } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {

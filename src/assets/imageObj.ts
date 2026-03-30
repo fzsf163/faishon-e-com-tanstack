@@ -76,61 +76,79 @@ export const CategoryBlocks = [
   },
 ]
 
-export const Ready_For_Order = [
+export const productsTopSellings = [
   {
-    name: 'image12',
-    href: 'https://shorturl.at/YVFpj',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '890',
+    href: '/public/nexf/product/1.png',
+    oldprice: '660',
+    discount: '-20%',
   },
   {
-    name: 'image23',
-    href: 'https://shorturl.at/SaGPg',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '990',
+    href: '/public/nexf/product/2.png',
+    oldprice: '620',
+    discount: '-10%',
   },
   {
-    name: 'image34',
-    href: 'https://shorturl.at/tfys3',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '320',
+    href: '/public/nexf/product/3.png',
   },
   {
-    name: 'image4',
-    href: 'https://shorturl.at/PbXI3',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '560',
+    href: '/public/nexf/product/4.png',
+    oldprice: '660',
   },
   {
-    name: 'image5',
-    href: 'https://shorturl.at/JRpEd',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '720',
+    href: '/public/nexf/product/5.png',
   },
   {
-    name: 'image6',
-    href: 'https://rb.gy/iuhkop',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '670',
+    href: '/public/nexf/product/6.png',
   },
   {
-    name: 'image7',
-    href: 'https://tinyurl.com/4deptpvy',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '1120',
+    href: '/public/nexf/product/7.png',
+    oldprice: '1260',
   },
   {
-    name: 'image13',
-    href: 'https://shorturl.at/YVFpj',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '2590',
+    href: '/public/nexf/product/8.png',
+    oldprice: '3660',
+  },
+]
+export const productsNewArrivals = [
+  {
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '890',
+    href: '/public/nexf/product/9.png',
+    oldprice: '660',
+    discount: '-20%',
   },
   {
-    name: 'image24',
-    href: 'https://shorturl.at/SaGPg',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '990',
+    href: '/public/nexf/product/10.png',
+    oldprice: '620',
+    discount: '-10%',
   },
   {
-    name: 'image35',
-    href: 'https://shorturl.at/tfys3',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '320',
+    href: '/public/nexf/product/11.png',
   },
   {
-    name: 'image43',
-    href: 'https://shorturl.at/PbXI3',
-  },
-  {
-    name: 'image54',
-    href: 'https://shorturl.at/JRpEd',
-  },
-  {
-    name: 'image14',
-    href: 'https://shorturl.at/YVFpj',
-  },
-  {
-    name: 'image25',
-    href: 'https://shorturl.at/SaGPg',
+    name: 'Embroidery Classic Fit Panjabi ',
+    price: '560',
+    href: '/public/nexf/product/12.png',
+    oldprice: '660',
   },
 ]
