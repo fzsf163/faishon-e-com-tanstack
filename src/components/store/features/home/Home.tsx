@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, MessageCircle, MessageSquare } from 'lucide-react'
 import { Ctg_List } from '@/assets/cateogryList'
 import { productsTopSellings, SideBanner_Images } from '@/assets/imageObj'
 // import { useIsMobile } from '@/hooks/use-mobile'
@@ -122,6 +122,38 @@ export function Home() {
         </p>
         <div className='mt-10'>
           <FeaturedShowCase></FeaturedShowCase>
+        </div>
+      </div>
+
+      <div className=' grid grid-cols-2 items-center mt-25 rounded-theme relative'>
+        <div className='bg-[url("/public/nexf/cta/cta-bg.jpg")] absolute bottom-0 h-[85%] w-full -z-10 rounded-theme'></div>
+        <div className='grid grid-rows-auto gap-3 max-w-xl pl-15'>
+          <p className='text-2xl font-semibold'>Need Expert Help</p>
+          <p className='text-muted-foreground'>
+            For any queries and order related issues, call our helpline or knock
+            on our WhatsApp or Facebook page. We are here from 10 am to 8 pm.
+          </p>
+          <div className='flex items-center justify-start gap-2 mt-3'>
+            <Button className='bg-blue-600 rounded-theme'>
+              <span>
+                <MessageSquare></MessageSquare>
+              </span>
+              Messenger
+            </Button>
+            <Button className='bg-teal-600 rounded-theme'>
+              <span>
+                <MessageCircle></MessageCircle>
+              </span>
+              Whatsapp
+            </Button>
+          </div>
+        </div>
+        <div>
+          <img
+            src='/public/nexf/cta/representative.png'
+            alt='female with a headphone image'
+            className='max-h-95'
+          ></img>
         </div>
       </div>
     </div>
