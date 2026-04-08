@@ -17,6 +17,22 @@ export default function ProductCard({
   oldprice,
   discount,
 }: Products) {
+  const saveTocart = ({ id }: { id: string }) => {
+    const stored = localStorage.getItem('cart')
+    const parsed = stored ? JSON.parse(stored) : []
+
+    const updated = [...parsed, id]
+
+    localStorage.setItem('cart', JSON.stringify(updated))
+  }
+  const saveToWhishlist = ({ id }: { id: string }) => {
+    const stored = localStorage.getItem('whishlist')
+    const parsed = stored ? JSON.parse(stored) : []
+
+    const updated = [...parsed, id]
+
+    localStorage.setItem('whishlist', JSON.stringify(updated))
+  }
   return (
     <div className='max-h-112 h-full w-full  max-w-72 relative group'>
       <div className='flex items-center justify-between absolute w-full p-3'>
@@ -31,6 +47,9 @@ export default function ProductCard({
           variant={'outline'}
           size={'icon'}
           className='bg-white hover:bg-blue-100 cursor-pointer rounded-theme opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300'
+          onClick={() => {
+            saveToWhishlist({ id: price! })
+          }}
         >
           <Heart></Heart>
         </Button>
@@ -56,6 +75,9 @@ export default function ProductCard({
           variant={'outline'}
           size={'icon'}
           className='bg-accent hover:bg-blue-100 cursor-pointer rounded-theme'
+          onClick={() => {
+            saveTocart({ id: price! })
+          }}
         >
           <ShoppingCart></ShoppingCart>
         </Button>

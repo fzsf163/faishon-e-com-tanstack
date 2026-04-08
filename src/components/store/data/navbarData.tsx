@@ -8,16 +8,22 @@ export const StoreTopBarData: {
     title: 'Categories',
     children: [
       {
-        title: 'Shoes',
+        title: 'Women',
       },
       {
-        title: 'Clothes',
+        title: 'Men',
       },
       {
         title: 'Kids',
       },
       {
         title: 'Trend',
+      },
+      {
+        title: 'Shoes',
+      },
+      {
+        title: 'Clothes',
       },
     ],
   },

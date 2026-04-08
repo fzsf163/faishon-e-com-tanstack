@@ -20,7 +20,6 @@ function RouteComponent() {
       <div className='hidden lg:block sticky top-0 z-50'>
         <StoreTopNavbar></StoreTopNavbar>
       </div>
-      {/* <CategoryList /> */}
       <Outlet />
       <div className='text-center mt-10'>
         <Footer></Footer>

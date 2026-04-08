@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { ArrowRightToLine, ChevronDown, ShoppingCart } from 'lucide-react'
+import { ArrowRightToLine, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   HoverCard,
@@ -9,6 +9,7 @@ import {
 import { ThemeSwitch } from '@/components/theme-switch'
 import { StoreTopBarData } from '../data/navbarData'
 import SearchWithIcon from './searchWithIcon'
+import ShoppingCartBox from './shoppingcart'
 import logodark from '/images/nexf-blue-logo.svg?url'
 import logolight from '/images/nexf-white-logo.svg?url'
 
@@ -23,7 +24,7 @@ export function StoreTopNavbar() {
         <SearchWithIcon></SearchWithIcon>
         <NavMap />
         <ThemeSwitch />
-        <ShoppingCart></ShoppingCart>
+        <ShoppingCartBox></ShoppingCartBox>
         <Link to='/sign-in'>
           <Button>
             <ArrowRightToLine></ArrowRightToLine> Login
@@ -47,20 +48,20 @@ const HoverComponent = ({
     <HoverCard>
       <HoverCardTrigger>
         <div className='flex items-center justify-center gap-1 font-semibold'>
-          <p>{title}</p>
+          <p className='cursor-context-menu'>{title}</p>
           <p>
             <ChevronDown></ChevronDown>
           </p>
         </div>
       </HoverCardTrigger>
-      <HoverCardContent>
+      <HoverCardContent className='grid gap-3 pl-10'>
         {children?.map((c) => {
           return (
             <Link
               to='/$menus'
               params={{ menus: c.title }}
               key={c.title}
-              className='flex items-center gap-6 w-full font-semibold '
+              className='font-semibold text-lg '
             >
               <p>{c.title}</p>
             </Link>

@@ -14,7 +14,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UserRouteRouteImport } from './routes/user/route'
 import { Route as StoreRouteRouteImport } from './routes/_store/route'
 import { Route as StoreIndexRouteImport } from './routes/_store/index'
+import { Route as StoreWhishlistRouteImport } from './routes/_store/whishlist'
+import { Route as StoreCheckoutRouteImport } from './routes/_store/checkout'
 import { Route as StoreAboutRouteImport } from './routes/_store/about'
+import { Route as StoreSingleproductRouteImport } from './routes/_store/$singleproduct'
 import { Route as StoreMenusRouteImport } from './routes/_store/$menus'
 import { Route as authSignInRouteImport } from './routes/(auth)/sign-in'
 import { Route as authOtpRouteImport } from './routes/(auth)/otp'
@@ -151,9 +154,24 @@ const authForgotPasswordLazyRoute = authForgotPasswordLazyRouteImport
   .lazy(() =>
     import('./routes/(auth)/forgot-password.lazy').then((d) => d.Route),
   )
+const StoreWhishlistRoute = StoreWhishlistRouteImport.update({
+  id: '/whishlist',
+  path: '/whishlist',
+  getParentRoute: () => StoreRouteRoute,
+} as any)
+const StoreCheckoutRoute = StoreCheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => StoreRouteRoute,
+} as any)
 const StoreAboutRoute = StoreAboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => StoreRouteRoute,
+} as any)
+const StoreSingleproductRoute = StoreSingleproductRouteImport.update({
+  id: '/$singleproduct',
+  path: '/$singleproduct',
   getParentRoute: () => StoreRouteRoute,
 } as any)
 const StoreMenusRoute = StoreMenusRouteImport.update({
@@ -346,7 +364,10 @@ export interface FileRoutesByFullPath {
   '/otp': typeof authOtpRoute
   '/sign-in': typeof authSignInRoute
   '/$menus': typeof StoreMenusRoute
+  '/$singleproduct': typeof StoreSingleproductRoute
   '/about': typeof StoreAboutRoute
+  '/checkout': typeof StoreCheckoutRoute
+  '/whishlist': typeof StoreWhishlistRoute
   '/forgot-password': typeof authForgotPasswordLazyRoute
   '/sign-in-2': typeof authSignIn2LazyRoute
   '/sign-up': typeof authSignUpLazyRoute
@@ -379,7 +400,10 @@ export interface FileRoutesByTo {
   '/otp': typeof authOtpRoute
   '/sign-in': typeof authSignInRoute
   '/$menus': typeof StoreMenusRoute
+  '/$singleproduct': typeof StoreSingleproductRoute
   '/about': typeof StoreAboutRoute
+  '/checkout': typeof StoreCheckoutRoute
+  '/whishlist': typeof StoreWhishlistRoute
   '/forgot-password': typeof authForgotPasswordLazyRoute
   '/sign-in-2': typeof authSignIn2LazyRoute
   '/sign-up': typeof authSignUpLazyRoute
@@ -414,7 +438,10 @@ export interface FileRoutesById {
   '/(auth)/otp': typeof authOtpRoute
   '/(auth)/sign-in': typeof authSignInRoute
   '/_store/$menus': typeof StoreMenusRoute
+  '/_store/$singleproduct': typeof StoreSingleproductRoute
   '/_store/about': typeof StoreAboutRoute
+  '/_store/checkout': typeof StoreCheckoutRoute
+  '/_store/whishlist': typeof StoreWhishlistRoute
   '/(auth)/forgot-password': typeof authForgotPasswordLazyRoute
   '/(auth)/sign-in-2': typeof authSignIn2LazyRoute
   '/(auth)/sign-up': typeof authSignUpLazyRoute
@@ -451,7 +478,10 @@ export interface FileRouteTypes {
     | '/otp'
     | '/sign-in'
     | '/$menus'
+    | '/$singleproduct'
     | '/about'
+    | '/checkout'
+    | '/whishlist'
     | '/forgot-password'
     | '/sign-in-2'
     | '/sign-up'
@@ -484,7 +514,10 @@ export interface FileRouteTypes {
     | '/otp'
     | '/sign-in'
     | '/$menus'
+    | '/$singleproduct'
     | '/about'
+    | '/checkout'
+    | '/whishlist'
     | '/forgot-password'
     | '/sign-in-2'
     | '/sign-up'
@@ -518,7 +551,10 @@ export interface FileRouteTypes {
     | '/(auth)/otp'
     | '/(auth)/sign-in'
     | '/_store/$menus'
+    | '/_store/$singleproduct'
     | '/_store/about'
+    | '/_store/checkout'
+    | '/_store/whishlist'
     | '/(auth)/forgot-password'
     | '/(auth)/sign-in-2'
     | '/(auth)/sign-up'
@@ -642,11 +678,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authForgotPasswordLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_store/whishlist': {
+      id: '/_store/whishlist'
+      path: '/whishlist'
+      fullPath: '/whishlist'
+      preLoaderRoute: typeof StoreWhishlistRouteImport
+      parentRoute: typeof StoreRouteRoute
+    }
+    '/_store/checkout': {
+      id: '/_store/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof StoreCheckoutRouteImport
+      parentRoute: typeof StoreRouteRoute
+    }
     '/_store/about': {
       id: '/_store/about'
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof StoreAboutRouteImport
+      parentRoute: typeof StoreRouteRoute
+    }
+    '/_store/$singleproduct': {
+      id: '/_store/$singleproduct'
+      path: '/$singleproduct'
+      fullPath: '/$singleproduct'
+      preLoaderRoute: typeof StoreSingleproductRouteImport
       parentRoute: typeof StoreRouteRoute
     }
     '/_store/$menus': {
@@ -808,7 +865,10 @@ declare module '@tanstack/react-router' {
 
 interface StoreRouteRouteChildren {
   StoreMenusRoute: typeof StoreMenusRoute
+  StoreSingleproductRoute: typeof StoreSingleproductRoute
   StoreAboutRoute: typeof StoreAboutRoute
+  StoreCheckoutRoute: typeof StoreCheckoutRoute
+  StoreWhishlistRoute: typeof StoreWhishlistRoute
   StoreIndexRoute: typeof StoreIndexRoute
   StoreCategoryNameRoute: typeof StoreCategoryNameRoute
   StoreProductsProductCtgProductNameRoute: typeof StoreProductsProductCtgProductNameRoute
@@ -816,7 +876,10 @@ interface StoreRouteRouteChildren {
 
 const StoreRouteRouteChildren: StoreRouteRouteChildren = {
   StoreMenusRoute: StoreMenusRoute,
+  StoreSingleproductRoute: StoreSingleproductRoute,
   StoreAboutRoute: StoreAboutRoute,
+  StoreCheckoutRoute: StoreCheckoutRoute,
+  StoreWhishlistRoute: StoreWhishlistRoute,
   StoreIndexRoute: StoreIndexRoute,
   StoreCategoryNameRoute: StoreCategoryNameRoute,
   StoreProductsProductCtgProductNameRoute:
