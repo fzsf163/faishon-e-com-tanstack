@@ -24,7 +24,7 @@ const latestOffers = [
   {
     name: 'Embroidery Classic Fit Panjabi ',
     price: '890',
-    href: '/public/nexf/product/9.png',
+    href: 'nexf/product/9.png',
     oldprice: '660',
     discount: '-20%',
     description:
@@ -36,7 +36,7 @@ const latestOffers = [
   {
     name: 'Embroidery Classic Fit Panjabi ',
     price: '990',
-    href: '/public/nexf/product/10.png',
+    href: 'nexf/product/10.png',
     oldprice: '620',
     discount: '-10%',
     description:
@@ -48,7 +48,7 @@ const latestOffers = [
   {
     name: 'Embroidery Classic Fit Panjabi ',
     price: '320',
-    href: '/public/nexf/product/11.png',
+    href: 'nexf/product/11.png',
     description:
       'This block will collect data from that specific products description. A few lines will be displayed here and the rest will get three dot...',
     review: '3435',
@@ -58,7 +58,7 @@ const latestOffers = [
   {
     name: 'Embroidery Classic Fit Panjabi ',
     price: '560',
-    href: '/public/nexf/product/12.png',
+    href: 'nexf/product/12.png',
     oldprice: '660',
     description:
       'This block will collect data from that specific products description. A few lines will be displayed here and the rest will get three dot...',

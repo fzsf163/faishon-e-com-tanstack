@@ -126,7 +126,7 @@ export function Home() {
       </div>
 
       <div className=' grid grid-cols-2 items-center mt-25 rounded-theme relative'>
-        <div className='bg-[url("/public/nexf/cta/cta-bg.jpg")] absolute bottom-0 h-[85%] w-full -z-10 rounded-theme'></div>
+        <div className='bg-[url("/nexf/cta/cta-bg.jpg")] absolute bottom-0 h-[85%] w-full -z-10 rounded-theme'></div>
         <div className='grid grid-rows-auto gap-3 max-w-xl pl-15'>
           <p className='text-2xl font-semibold'>Need Expert Help</p>
           <p className='text-muted-foreground'>
@@ -150,7 +150,7 @@ export function Home() {
         </div>
         <div>
           <img
-            src='/public/nexf/cta/representative.png'
+            src='nexf/cta/representative.png'
             alt='female with a headphone image'
             className='max-h-95'
           ></img>

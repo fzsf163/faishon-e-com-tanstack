@@ -13,7 +13,7 @@ const latestOffers = [
   {
     name: 'Rakib Zobair',
     itemreviewed: 'Embroidery Classic Fit Panjabi',
-    userpic: '/public/nexf/product/9.png',
+    userpic: 'nexf/product/9.png',
     description:
       'I absolutely love this smartwatch! It tracks my steps, heart rate, and even sleep patterns with great accuracy. The design is sleek and lightweight, making it comfortable...',
     stars: '5',
@@ -21,7 +21,7 @@ const latestOffers = [
   {
     name: 'Tanzia Siddiqua',
     itemreviewed: 'Embroidery Classic Fit Panjabi',
-    userpic: '/public/nexf/product/10.png',
+    userpic: 'nexf/product/10.png',
     description:
       'I absolutely love this smartwatch! It tracks my steps, heart rate, and even sleep patterns with great accuracy. The design is sleek and lightweight, making it comfortable...',
     stars: '5',
@@ -29,7 +29,7 @@ const latestOffers = [
   {
     name: 'Farzana Eivy',
     itemreviewed: 'Embroidery Classic Fit Panjabi',
-    userpic: '/public/nexf/product/11.png',
+    userpic: 'nexf/product/11.png',
     description:
       'I absolutely love this smartwatch! It tracks my steps, heart rate, and even sleep patterns with great accuracy. The design is sleek and lightweight, making it comfortable...',
     stars: '5',
@@ -37,7 +37,7 @@ const latestOffers = [
   {
     name: 'Jakik Khan',
     itemreviewed: 'Embroidery Classic Fit Panjabi',
-    userpic: '/public/nexf/product/12.png',
+    userpic: 'nexf/product/12.png',
     description:
       'I absolutely love this smartwatch! It tracks my steps, heart rate, and even sleep patterns with great accuracy. The design is sleek and lightweight, making it comfortable...',
     stars: '5',
@@ -45,7 +45,7 @@ const latestOffers = [
   {
     name: 'Jakik Khan2',
     itemreviewed: 'Embroidery Classic Fit Panjabi',
-    userpic: '/public/nexf/product/12.png',
+    userpic: 'nexf/product/12.png',
     description:
       'I absolutely love this smartwatch! It tracks my steps, heart rate, and even sleep patterns with great accuracy. The design is sleek and lightweight, making it comfortable...',
     stars: '5',

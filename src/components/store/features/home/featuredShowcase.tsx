@@ -3,41 +3,41 @@ import { StarFilledIcon } from '@radix-ui/react-icons'
 export const featured = [
   {
     name: 'Embroidery Classic Fit Panjabi ',
-    href: '/public/nexf/product/1.png',
+    href: 'nexf/product/1.png',
   },
   {
     name: 'Embroidery Classic Fit Panjabi ',
-    href: '/public/nexf/product/2.png',
-  },
-  {
-    name: 'Embroidery Classic Fit Panjabi ',
-
-    href: '/public/nexf/product/3.png',
+    href: 'nexf/product/2.png',
   },
   {
     name: 'Embroidery Classic Fit Panjabi ',
 
-    href: '/public/nexf/product/4.png',
+    href: 'nexf/product/3.png',
   },
   {
     name: 'Embroidery Classic Fit Panjabi ',
-    href: '/public/nexf/product/5.png',
+
+    href: 'nexf/product/4.png',
   },
   {
     name: 'Embroidery Classic Fit Panjabi ',
-    href: '/public/nexf/product/6.png',
+    href: 'nexf/product/5.png',
   },
   {
     name: 'Embroidery Classic Fit Panjabi ',
-    href: '/public/nexf/product/7.png',
+    href: 'nexf/product/6.png',
   },
   {
     name: 'Embroidery Classic Fit Panjabi ',
-    href: '/public/nexf/product/8.png',
+    href: 'nexf/product/7.png',
   },
   {
     name: 'Embroidery Classic Fit Panjabi ',
-    href: '/public/nexf/product/9.png',
+    href: 'nexf/product/8.png',
+  },
+  {
+    name: 'Embroidery Classic Fit Panjabi ',
+    href: 'nexf/product/9.png',
   },
 ]
 export default function FeaturedShowCase() {
