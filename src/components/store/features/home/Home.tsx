@@ -16,11 +16,11 @@ export function Home() {
   return (
     <div className='container-custom'>
       <div className='grid grid-cols-10 gap-6 mt-6'>
-        <div className='col-span-7'>
+        <div className='col-span-10 sm:col-span-7'>
           <CarouselMain></CarouselMain>
         </div>
-        <div className='col-span-3'>
-          <div className='sm:grid grid-cols-1 gap-6  hidden'>
+        <div className='col-span-3 hidden sm:block'>
+          <div className='sm:grid grid-cols-1 gap-6 hidden'>
             {SideBanner_Images.map((S) => {
               return (
                 <img
@@ -35,7 +35,7 @@ export function Home() {
         </div>
       </div>
 
-      <div className='mt-6 flex gap-1 sm:gap-10 sm:max-w-(--breakpoint-2xl) mx-auto  items-center justify-around bg-[#F4FAFF] dark:bg-accent h-20 w-full rounded-theme'>
+      <div className='mt-2 p-2 sm:mt-6 grid grid-cols-2 grid-rows-auto place-items-start sm:flex gap-4 sm:gap-10 sm:max-w-(--breakpoint-2xl) mx-auto  items-center sm:justify-around bg-[#F4FAFF] dark:bg-accent sm:h-20 w-full rounded-theme'>
         {Ctg_List.map((C) => (
           <div key={C.name}>
             <div className='border-none shadow-none dark:bg-accent'>
@@ -47,7 +47,7 @@ export function Home() {
           </div>
         ))}
       </div>
-      <div className='sm:mt-25'>
+      <div className=' sm:mt-25'>
         <div className='text-center space-y-2'>
           <p className='font-semibold sm:text-2xl'>Popular Categories</p>
         </div>

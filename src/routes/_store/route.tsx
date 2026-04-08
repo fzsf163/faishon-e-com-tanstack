@@ -1,7 +1,6 @@
 import { createFileRoute, Outlet } from '@tanstack/react-router'
 import Footer from '@/components/store/shared/footer'
 import { SheetSide } from '@/components/store/shared/mobileNav'
-import SearchWithModal from '@/components/store/shared/mobileSearch'
 import { StoreTopNavbar } from '@/components/store/shared/navbar'
 import SearchWithIcon from '@/components/store/shared/searchWithIcon'
 import { ThemeSwitch } from '@/components/theme-switch'

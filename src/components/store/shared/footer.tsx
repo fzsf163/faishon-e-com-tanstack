@@ -1,19 +1,18 @@
 import { MapPin, PhoneCall } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import logolight from '/images/nexf-white-logo.svg'
 
 export default function Footer() {
   return (
     <div>
       <footer className='bg-slate-900'>
         <div className='max-w-(--breakpoint-xl) px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24'>
-          <div className='grid grid-cols-1 gap-10 lg:grid-cols-12 w-full'>
+          <div className=' space-y-10 sm:space-y-0 sm:grid  gap-10 lg:grid-cols-12 w-full'>
             <div className='col-span-4'>
               <div className='flex justify-center text-primary-foreground sm:justify-start'>
                 <img
-                  src={logolight}
+                  src='images/nexf-white-logo.svg'
                   alt='Logo'
-                  className='h-6 w-21 p-4 sm:p-0'
+                  className='w-1/2  sm:h-6 sm:w-21 p-4 sm:p-0'
                 ></img>
               </div>
 
@@ -87,8 +86,8 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-8 md:grid-cols-8'>
-              <div className='text-center sm:text-left col-span-3'>
+            <div className='grid w-fit m-auto justify-center gap-5  sm:gap-8 sm:grid-cols-2 lg:col-span-8 md:grid-cols-8'>
+              <div className='text-left col-span-3'>
                 <p className='text-sm font-medium text-muted-foreground'>
                   Company
                 </p>
@@ -128,7 +127,7 @@ export default function Footer() {
                 </nav>
               </div>
 
-              <div className='text-center sm:text-left col-span-3'>
+              <div className='text-left col-span-3'>
                 <p className='text-sm font-medium text-muted-foreground'>
                   Policies
                 </p>
@@ -167,7 +166,7 @@ export default function Footer() {
                 </nav>
               </div>
 
-              <div className='text-center sm:text-left col-span-2'>
+              <div className='text-left col-span-2'>
                 <p className='text-sm font-medium text-muted-foreground'>
                   Useful Links
                 </p>
@@ -200,10 +199,10 @@ export default function Footer() {
               <p className='mt-4 text-sm sm:order-first sm:mt-0'>
                 &copy; 2026 NEXF Lifestyle Limited. All Rights Reserved.
               </p>
-              <p className='text-sm '>Fuled by CyberSpace Digital</p>
-              <div className='flex items-center justify-start gap-2'>
-                <p className='text-sm '>We Accept</p>
-                <div className='flex items-center justify-start gap-2 [&_img]:w-12'>
+              <p className='text-sm'>Fuled by CyberSpace Digital</p>
+              <div className='grid justify-center sm:flex items-center sm:justify-start gap-2'>
+                <p className='text-sm mt-2 sm:mt-0'>We Accept</p>
+                <div className='grid grdi-rows-auto grid-cols-3 sm:flex items-center justify-start gap-2 [&_img]:w-12'>
                   <img src='/nexf/payment/bank.png'></img>
                   <img src='/nexf/payment/bkash.png'></img>
                   <img src='/nexf/payment/cod.png'></img>
