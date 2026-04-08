@@ -23,7 +23,7 @@ export default function ShoppingCartBox() {
             <ShoppingCart></ShoppingCart>
           </div>
         </DialogTrigger>
-        <DialogContent className='rounded-theme w-fit h-fit min-w-200'>
+        <DialogContent className='rounded-theme w-fit h-fit sm:min-w-200'>
           <div className='flex flex-col items-center gap-2 '>
             <DialogHeader>
               <DialogTitle className='sm:text-center text-2xl'>

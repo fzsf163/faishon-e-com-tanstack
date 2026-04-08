@@ -5,7 +5,7 @@ export type Category = {
 
 const categories: Category[] = [
   {
-    name: 'Phones & Tablets',
+    name: 'Categories',
     children: [
       {
         name: 'Smartphones',

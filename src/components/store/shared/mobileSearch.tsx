@@ -1,8 +1,6 @@
-'use client'
-
-import { CommandDialog, CommandInput } from '@/components/ui/command'
-import { Search } from 'lucide-react'
 import * as React from 'react'
+import { Search } from 'lucide-react'
+import { CommandDialog, CommandInput } from '@/components/ui/command'
 
 export default function SearchWithModal() {
   const [open, setOpen] = React.useState(false)
