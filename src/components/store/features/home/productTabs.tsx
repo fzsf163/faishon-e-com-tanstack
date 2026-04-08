@@ -1,5 +1,5 @@
 import { ShoppingBag, ShoppingCart } from 'lucide-react'
-import { Carousel_Images, Ready_For_Order } from '@/assets/imageObj'
+import { Carousel_Images } from '@/assets/imageObj'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
