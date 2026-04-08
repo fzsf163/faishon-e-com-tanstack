@@ -18,7 +18,7 @@ export default function SearchWithIcon() {
     <div className=' w-40  sm:min-w-[20rem] flex flex-col gap-4'>
       <div className='relative cursor-pointer' onClick={() => setOpen(true)}>
         <Input
-          className=' placeholder:font-bold placeholder:text-black/70 dark:placeholder:text-white/70 bg-background/40 text-black p-5 rounded-full border-none caret-transparent  focus-visible:ring-indgo-700 transition-all duration-75 ease-in-out'
+          className=' placeholder:font-semibold placeholder:text-black/70 dark:placeholder:text-white/70 bg-background/40 text-black p-5 rounded-full border-none caret-transparent  focus-visible:ring-indgo-700 transition-all duration-75 ease-in-out'
           type='search'
           placeholder='Search'
           readOnly
