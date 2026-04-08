@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import { Card } from '@/components/ui/card'
 import AuthLayout from '../auth-layout'
 import { UserAuthForm } from './components/user-auth-form'
@@ -11,6 +12,12 @@ export default function SignIn() {
           <p className='text-sm text-muted-foreground'>
             Enter your email and password below <br />
             to log into your account
+          </p>
+          <p className='text-sm text-muted-foreground'>
+            Don't have an account?{' '}
+            <span className='underline'>
+              <Link to='/sign-up'>Sign Up</Link>
+            </span>
           </p>
         </div>
         <UserAuthForm />

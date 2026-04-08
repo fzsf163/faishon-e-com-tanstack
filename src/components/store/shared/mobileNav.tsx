@@ -1,5 +1,4 @@
-'use client'
-
+import { AlignJustify } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -11,7 +10,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import { AlignJustify } from 'lucide-react'
 import CategoryList from './categoriesNav'
 
 const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const

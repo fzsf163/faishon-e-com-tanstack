@@ -24,9 +24,11 @@ export function StoreTopNavbar() {
         <NavMap />
         <ThemeSwitch />
         <ShoppingCart></ShoppingCart>
-        <Button>
-          <ArrowRightToLine></ArrowRightToLine> Login
-        </Button>
+        <Link to='/sign-in'>
+          <Button>
+            <ArrowRightToLine></ArrowRightToLine> Login
+          </Button>
+        </Link>
         {/* <ProfileDropdown /> */}
       </div>
     </div>

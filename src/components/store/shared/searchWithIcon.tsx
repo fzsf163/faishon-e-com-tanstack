@@ -1,22 +1,56 @@
+import { useState } from 'react'
 import { Search } from 'lucide-react'
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from '@/components/ui/command'
 import { Input } from '@/components/ui/input'
 
 export default function SearchWithIcon() {
+  const [open, setOpen] = useState(false)
   return (
-    <div className='min-w-[20rem]'>
-      <div className='relative'>
+    <div className='min-w-[20rem] flex flex-col gap-4'>
+      <div className='relative cursor-pointer' onClick={() => setOpen(true)}>
         <Input
-          className=' placeholder:font-bold placeholder:text-black/70 dark:placeholder:text-white/70 bg-background/40 text-black p-5 rounded-full border-none caret-black  focus-visible:ring-indgo-700 transition-all duration-75 ease-in-out'
+          className=' placeholder:font-bold placeholder:text-black/70 dark:placeholder:text-white/70 bg-background/40 text-black p-5 rounded-full border-none caret-transparent  focus-visible:ring-indgo-700 transition-all duration-75 ease-in-out'
           type='search'
           placeholder='Search'
+          readOnly
+          tabIndex={-1}
         />
-        <button
-          className='absolute inset-y-0 inset-e-0 flex h-full w-10 dark:*:text-white items-center justify-center rounded-e-lg border border-transparent text-muted-foreground/80 outline-offset-2 transition-colors hover:text-foreground focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50'
-          aria-label='Search'
-        >
-          <Search size={16} strokeWidth={2} aria-hidden='true' />
-        </button>
+        <Search
+          size={16}
+          strokeWidth={2}
+          aria-hidden='true'
+          className='absolute right-4 top-3'
+        />
       </div>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <Command className='rounded-theme'>
+          <CommandInput placeholder='Type a command or search...' />
+          <CommandList className='overflow-y-auto no-scrollbar'>
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandGroup heading='Suggestions'>
+              <CommandItem>Calendar</CommandItem>
+              <CommandItem>Search Emoji</CommandItem>
+              <CommandItem>Calculator</CommandItem>
+            </CommandGroup>
+            <CommandSeparator />
+            <CommandGroup heading='Settings'>
+              <CommandItem>Profile</CommandItem>
+              <CommandItem>Billing</CommandItem>
+              <CommandItem>Settings</CommandItem>
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </CommandDialog>
     </div>
   )
 }

@@ -115,7 +115,9 @@ export default function LatestOfersCarousel() {
                       </span>
                     </div>
                     <div>
-                      <p className='font-semibold text-lg'>{L.name}</p>
+                      <p className='font-semibold text-lg dark:text-accent'>
+                        {L.name}
+                      </p>
                       <p className='text-muted-foreground text-sm'>
                         {L.description}
                       </p>
@@ -128,16 +130,17 @@ export default function LatestOfersCarousel() {
                         {L.discount ? L.discount + 'OFF' : null}
                       </Badge>
                       <div className='flex items-baseline gap-2 justify-start'>
-                        <p className='font-semibold text-xl'>
+                        <p className='font-semibold text-xl dark:text-accent'>
                           {' '}
-                          <span className='font-extrabold'>&#x09F3;</span>
+                          <span className='font-extrabold '>&#x09F3;</span>
                           {L.price}
                         </p>
-                        <p className='font-semibold text-muted-foreground line-through text-sm'>
-                          {' '}
-                          <span className='font-extrabold'>&#x09F3;</span>
-                          {L.oldprice}
-                        </p>
+                        {L.oldprice ? (
+                          <p className='font-semibold text-muted-foreground line-through text-sm'>
+                            <span className='font-extrabold'>&#x09F3;</span>
+                            {L.oldprice}
+                          </p>
+                        ) : null}
                       </div>
                       <div className='flex items-center justify-start gap-2'>
                         <Button className='rounded-theme'>
