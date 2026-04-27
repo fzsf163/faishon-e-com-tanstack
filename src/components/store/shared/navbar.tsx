@@ -1,12 +1,12 @@
-import { Link } from '@tanstack/react-router'
-import { ArrowRightToLine, ChevronDown } from 'lucide-react'
+import { ThemeSwitch } from '@/components/theme-switch'
 import { Button } from '@/components/ui/button'
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
-import { ThemeSwitch } from '@/components/theme-switch'
+import { Link } from '@tanstack/react-router'
+import { ArrowRightToLine, ChevronDown } from 'lucide-react'
 import { StoreTopBarData } from '../data/navbarData'
 import SearchWithIcon from './searchWithIcon'
 import ShoppingCartBox from './shoppingcart'
@@ -17,19 +17,23 @@ export function StoreTopNavbar() {
   return (
     <div className='w-full bg-white  text-black dark:text-foreground dark:bg-secondary'>
       <div className='flex container-custom mx-auto w-full items-center justify-around gap-10 py-5  '>
-        <Link to='/'>
-          <img className='w-21 h-5  dark:hidden' src={logodark}></img>
-          <img className='w-21 h-5 hidden dark:block' src={logolight}></img>
-        </Link>
-        <SearchWithIcon></SearchWithIcon>
-        <NavMap />
-        <ThemeSwitch />
-        <ShoppingCartBox></ShoppingCartBox>
-        <Link to='/sign-in'>
-          <Button>
-            <ArrowRightToLine></ArrowRightToLine> Login
-          </Button>
-        </Link>
+        <div className='flex items-center justify-center gap-2 w-full'>
+          <Link to='/'>
+            <img className='w-full h-full max-h-32 max-w-24  dark:hidden' src={logodark}></img>
+            <img className='w-full h-full hidden dark:block' src={logolight}></img>
+          </Link>
+          <SearchWithIcon></SearchWithIcon>
+        </div>
+        <div className='flex items-center justify-center gap-4'>
+          <NavMap />
+          <ThemeSwitch />
+          <ShoppingCartBox></ShoppingCartBox>
+          <Link to='/sign-in'>
+            <Button>
+              <ArrowRightToLine></ArrowRightToLine> Login
+            </Button>
+          </Link>
+        </div>
         {/* <ProfileDropdown /> */}
       </div>
     </div>
@@ -54,7 +58,7 @@ const HoverComponent = ({
           </p>
         </div>
       </HoverCardTrigger>
-      <HoverCardContent className='grid gap-3 pl-10'>
+      <HoverCardContent className='grid gap-1'>
         {children?.map((c) => {
           return (
             <Link
@@ -74,7 +78,7 @@ const HoverComponent = ({
 
 function NavMap() {
   return (
-    <div className='flex items-center justify-center gap-10'>
+    <div className='flex items-center justify-center gap-4'>
       {StoreTopBarData.map(({ title, children }) => {
         return (
           <div key={title}>

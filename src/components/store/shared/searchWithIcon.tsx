@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { Search } from 'lucide-react'
 import {
   Command,
   CommandDialog,
@@ -11,14 +9,16 @@ import {
   CommandSeparator,
 } from '@/components/ui/command'
 import { Input } from '@/components/ui/input'
+import { Search } from 'lucide-react'
+import { useState } from 'react'
 
 export default function SearchWithIcon() {
   const [open, setOpen] = useState(false)
   return (
-    <div className=' w-40  sm:min-w-[20rem] flex flex-col gap-4'>
+    <div className=' w-40  sm:min-w-[20rem] sm:w-full flex flex-col gap-4'>
       <div className='relative cursor-pointer' onClick={() => setOpen(true)}>
         <Input
-          className=' placeholder:font-semibold placeholder:text-black/70 dark:placeholder:text-white/70 bg-background/40 text-black p-5 rounded-full border-none caret-transparent  focus-visible:ring-indgo-700 transition-all duration-75 ease-in-out'
+          className=' placeholder:font-semibold placeholder:text-black/70 dark:placeholder:text-white/70 bg-background/40 text-black p-5 rounded-theme border-gray-400 caret-transparent  focus-visible:ring-indgo-700 transition-all duration-75 ease-in-out'
           type='search'
           placeholder='Search'
           readOnly

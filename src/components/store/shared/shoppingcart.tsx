@@ -1,7 +1,3 @@
-import { useState } from 'react'
-import { Link } from '@tanstack/react-router'
-import { IconTrash } from '@tabler/icons-react'
-import { ShoppingCart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -12,6 +8,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
+import { IconTrash } from '@tabler/icons-react'
+import { Link } from '@tanstack/react-router'
+import { ShoppingCart } from 'lucide-react'
+import { useState } from 'react'
 
 export default function ShoppingCartBox() {
   const [count, setCount] = useState(0)
